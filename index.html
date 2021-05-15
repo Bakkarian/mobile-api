@@ -646,18 +646,14 @@
                                 <li id="get-issued-patasente-cards-item" class="level-3">
                                     <a id="get-issued-patasente-cards-link" href="#get-issued-patasente-cards" class="level-3">Get Issued Patasente cards</a>
                                 </li>
-                                <li id="get-a-patasente-card-item" class="level-3">
-                                    <a id="get-a-patasente-card-link" href="#get-a-patasente-card" class="level-3">Get A Patasente card </a>
-                                </li>
+                                
                                 <li id="get-supported-patasente-card-statuses-item" class="level-3">
                                     <a id="get-supported-patasente-card-statuses-link" href="#get-supported-patasente-card-statuses" class="level-3">Supported Patasente card statuses</a>
                                 </li>
                                 <li id="modify-patasente-card-status-item" class="level-3">
                                     <a id="modify-patasente-card-status-link" href="#modify-patasente-card-status" class="level-3">Modify Patasente Card  Status </a>
                                 </li>
-                                <li id="debit-patasente-card-item" class="level-3">
-                                    <a id="debit-patasente-card-link" href="#debit-patasente-card" class="level-3">Debit a Patasente card</a>
-                                </li>
+                                
                                 <li id="credit-patasente-card-item" class="level-3">
                                     <a id="credit-patasente-card-link" href="#credit-patasente-card" class="level-3">Credit a Patasente card </a>
                                 </li>
@@ -709,7 +705,13 @@
                                 <li id="unlock-sente-card-item" class="level-3">
                                     <a id="unlock-sente-card-link" href="#unlock-sente-card" class="level-3">Unlock User Sente Card</a>
                                 </li>
-
+                                
+                                <li id="get-a-patasente-card-item" class="level-3">
+                                    <a id="get-a-patasente-card-link" href="#get-a-patasente-card" class="level-3">Get A Patasente card </a>
+                                </li>
+                                <li id="debit-patasente-card-item" class="level-3">
+                                    <a id="debit-patasente-card-link" href="#debit-patasente-card" class="level-3">Debit a Patasente card</a>
+                                </li>
                             </ul>
                         </li>
 
@@ -10165,52 +10167,7 @@
             </p>
         </blockquote>
 
-        <h2 id="get-a-patasente-card">Get A Patasente Card </h2>
-        <p>This section will take you through fetching a Patasente cards
-            on Patasente API. </p>
-
-        <p>A <strong>GET</strong> request should be made to this API endpoint</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/get-patasente-card/</p>
-        </blockquote>
-        <p>The parameters that should be sent to this endpoint are "id" and "card_no"</p>
-        <p>When the QR Code on the card is scanned , you'll get a string with card id and card_no.The id is the second last argument in the string that's stored in the QR Code </p>
-
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/get-patasente-card/4/1663********06916067</p>
-        </blockquote>
-        <p>A json response with 200 success code  will be returned</p>
-        <blockquote>
-            <p>
-                {
-                    "id": 4,
-                    "company_id": 6,
-                    "card_names": null,
-                    "card_request_names": "Gift Card",
-                    "card_request_id": 4,
-                    "card_type_id": 2,
-                    "currency": "UGX",
-                    "currency_id": 1,
-                    "card_type": "Gift Card",
-                    "card_no": "1663********06916067",
-                    "amount": 5000,
-                    "balance": 3000,
-                    "card_limit": 5000,
-                    "expiry_date": "08/21",
-                    "status": "active",
-                    "has_pin": false
-                }
-            </p>
-        </blockquote>
-        <p>If there any errors, a json response with 400 error code  will be returned</p>
-
-        <blockquote>
-            <p>{
-                "error": "Card doesn't exist."
-                }
-            </p>
-        </blockquote>
-
+        
         <h2 id="get-supported-patasente-card-statuses">Get Supported Patasente Card statuses</h2>
         <p>This section will take you through fetching supported card statuses
             on Patasente API. </p>
@@ -10308,77 +10265,6 @@
                 </tbody>
             </table>
         </div>
-
-
-        <h2 id="debit-patasente-card">Debit a Patasente Card</h2>
-        <p>This section will take you through modifying a Patasente Card status
-            on Patasente API. </p>
-
-        <p>A <strong>PUT</strong> request should be made to this API endpoint</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/debit-patasente-card/id</p>
-        </blockquote>
-        <p>The parameters that should be sent to this endpoint are "id"  and "amount" ,"payment_reason" ,"pin"</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/debit-patasente-card/4?amount=3000&payment_reason=payment for bananas&pin=1234</p>
-        </blockquote>
-        <p>A json response with 200 success code will be returned</p>
-        <blockquote>
-            <p>{
-                "success": "Funds have been debited from card 1663********06916067"
-                }
-            </p>
-        </blockquote>
-
-        <p>If there any errors, a json response with 400 error code  will be returned</p>
-
-        <blockquote>
-            <p>{
-                "error": "This card requires a PIN to complete this transaction"
-                }
-            </p>
-        </blockquote>
-
-        <p>Below are the fields required by the API</p>
-        <div class="table-responsive align-content-sm-center">
-            <table  class="table table-borderless m-b-none table-hover">
-                <thead>
-                <tr>
-                    <th width="20%">Field</th>
-                    <th width="10%">Type</th>
-                    <th width="20%">Required</th>
-                    <th width="50%">Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>id</td>
-                    <td>number</td>
-                    <td>Yes</td>
-                    <td>This is the id of the card to be debited got from scanning a QR Code on the client card. <a href="#get-a-patasente-card">Get a patasente card</a></td>
-                </tr>
-                <tr>
-                    <td>amount</td>
-                    <td>number</td>
-                    <td>Yes</td>
-                    <td>This is the amount to be credited on the card.<strong>Refer to the data returned from <a href="#get-a-patasente-card">Get a patasente card</a> after scanning the QR Code on the card to determine the balance on the card.</strong> You can't debit  more than the balance of the card which is returned as amount in this object <a href="#get-a-patasente-card">Get a patasente card</a></td>
-                </tr>
-                <tr>
-                    <td>payment_reason</td>
-                    <td>string</td>
-                    <td>Yes</td>
-                    <td>This is the reason to why a debit is being made against this card. </td>
-                </tr>
-                <tr>
-                    <td>pin</td>
-                    <td>number</td>
-                    <td>Optional</td>
-                    <td>This is a four(4) digit PIN that secures the Card. <strong>Option for entering a PIN should popup if the card requires a PIN to complete a transaction. </strong> A notice should pop informing the merchant to give the device the client to enter their  Card PIN</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
 
         <h2 id="credit-patasente-card">Credit a Patasente Card</h2>
         <p>This section will take you through crediting a Patasente Card
@@ -11272,8 +11158,132 @@
                     </tbody>
                 </table>
 
+            <h2 id="get-a-patasente-card">Get A Patasente Card </h2>
+            <p>This section will fetch details of a single Sente card if you scan the QR Code 
+                on Patasente API. </p>
 
-                <h2 id="misc-acknowledgements">Acknowledgements</h2>
+            <p>A <strong>GET</strong> request should be made to this API endpoint</p>
+            <blockquote>
+                <p>https://demo.patasente.com/phantom-api/get-patasente-card/</p>
+            </blockquote>
+            <p>The parameters that should be sent to this endpoint are "id" and "card_no"</p>
+            <p>When the QR Code on the card is scanned , you'll get a string with card id and card_no.The id is the second last argument in the string that's stored in the QR Code </p>
+
+            <blockquote>
+                <p>https://demo.patasente.com/phantom-api/get-patasente-card/4/1663********06916067</p>
+            </blockquote>
+            <p>A json response with 200 success code  will be returned</p>
+            <blockquote>
+                <p>
+                    {
+                        "id": 24,
+                        "company_id": 2621,
+                        "currency": "UGX",
+                        "currency_id": 1,
+                        "card_no": "1616*****52241141888",
+                        "credit_account_limit": "10000",
+                        "available_credit": "1200",
+                        "current_account_wallet_balance": 0,
+                        "status": "active",
+                        "has_pin": true,
+                        "wallets": [
+                            {
+                                "name": "Current Account"
+                            },
+                            {
+                                "name": "Credit Account"
+                            }
+                        ]
+                    }
+                </p>
+            </blockquote>
+            <p>If there any errors, a json response with 400 error code  will be returned</p>
+
+            <blockquote>
+                <p>{
+                    "error": "Card doesn't exist."
+                    }
+                </p>
+            </blockquote>
+          
+                
+        <h2 id="debit-patasente-card">Debit a Patasente Card</h2>
+        <p>This section will take you through modifying a Patasente Card status
+            on Patasente API. </p>
+
+        <p>A <strong>POST</strong> request should be made to this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/debit-patasente-card/id</p>
+        </blockquote>
+        <p>The parameters that should be sent to this endpoint are "id"  and "amount" ,"payment_reason" ,"pin" ,"wallet_account"</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/debit-patasente-card/107?amount=3000&payment_reason=payment for bananas&pin=7364&wallet_account=Credit Account</p>
+        </blockquote>
+        <p>A json response with 200 success code will be returned</p>
+        <blockquote>
+            <p>{
+                "success": "Funds have been debited from card 1663********06916067"
+                }
+            </p>
+        </blockquote>
+
+        <p>If there any errors, a json response with 400 error code  will be returned</p>
+
+        <blockquote>
+            <p>{
+                "error": "This card requires a PIN to complete this transaction"
+                }
+            </p>
+        </blockquote>
+
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is the id of the card to be debited got from scanning a QR Code on the client card. <a href="#get-a-patasente-card">Get a patasente card</a></td>
+                </tr>
+                <tr>
+                    <td>amount</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is the amount to be debited for the transaction.</td>
+                </tr>
+                <tr>
+                    <td>payment_reason</td>
+                    <td>string</td>
+                    <td>Yes</td>
+                    <td>This is the reason to why a debit is being made against this card. </td>
+                </tr>
+                <tr>
+                    <td>pin</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is a four(4) digit PIN that secures the Card. <strong>Option for entering a PIN should popup if the card requires a PIN to complete a transaction. </strong> A notice should pop informing the merchant to give the device the client to enter their  Card PIN</td>
+                </tr>
+                <tr>
+                    <td>wallet_account</td>
+                    <td>string</td>
+                    <td>Yes</td>
+                    <td>This is the <a href="#get-a-patasente-card">wallet_account</a> a user wants to use for the transaction.Refer to the data returned from <a href="#get-a-patasente-card">Get a patasente card</a> after scanning the QR Code on the card to determine the you'll get an array of available <strong>wallets</strong> for this card. You can't debit more than the balance of the Current Account or more than the <strong>available_credit or credit_account_limit </strong> which is returned as amount in this object <a href="#get-a-patasente-card">Get a patasente card</a>  </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <h2 id="misc-acknowledgements">Acknowledgements</h2>
         <p>© 2020. </p>
         <p><strong>Patasente</strong> is developed and maintained by
         <a href="https://twitter.com/Lebronbrian23">@LebronBrian23</a> .</p>
