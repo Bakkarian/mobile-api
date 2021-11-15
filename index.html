@@ -247,23 +247,23 @@
                                 </li>
                             </ul>
                         </li>
-                        <li id="customers-and-suppliers-item" class="level-2">
-                            <a id="customers-and-suppliers-link" href="#customers-and-suppliers" class="level-2">Customers & Suppliers</a>
-                            <ul class="level-3" id="customers-and-suppliers-list">
+                        <li id="mis-suppliers-item" class="level-2">
+                            <a id="mis-uppliers-link" href="#mis-suppliers" class="level-2">MIS Suppliers</a>
+                            <ul class="level-3" id="company-list">
                                 <li id="company-list-item" class="level-3">
                                     <a id="company-link" href="#get-company-list" class="level-3">List of Companies</a>
                                 </li>
-                                <li id="get-customers-and-suppliers-list-item" class="level-3">
-                                    <a id="get-customers-and-suppliers-list-link" href="#get-customers-and-suppliers-list" class="level-3">List of Customers & Suppliers</a>
+                                <li id="get-suppliers-list-item" class="level-3">
+                                    <a id="get-suppliers-list-link" href="#get-suppliers-list" class="level-3">List of Suppliers</a>
                                 </li>
-                                <li id="get-customer-or-supplier-item" class="level-3">
-                                    <a id="get-customer-or-supplier-link" href="#get-customer-or-supplier" class="level-3">Get Customer or Supplier</a>
+                                <li id="get-supplier-item" class="level-3">
+                                    <a id="get-supplier-link" href="#get-supplier" class="level-3">Get Supplier</a>
                                 </li>
-                                <li id="add-customer-or-supplier-item" class="level-3">
-                                    <a id="add-customer-or-supplier-link" href="#add-customer-or-supplier" class="level-3">Add Customer or Supplier</a>
+                                <li id="add-supplier-item" class="level-3">
+                                    <a id="add-supplier-link" href="#add-supplier" class="level-3">Add Supplier</a>
                                 </li>
-                                <li id="delete-customer-or-supplier-item" class="level-3">
-                                    <a id="delete-customer-or-supplier-link" href="#delete-customer-or-supplier" class="level-3">Delete Customer or Supplier</a>
+                                <li id="delete-supplier-item" class="level-3">
+                                    <a id="delete-supplier-link" href="#delete-supplier" class="level-3">Delete Supplier</a>
                                 </li>
                             </ul>
                         </li>
@@ -356,20 +356,7 @@
                                 <li id="convert-currency-item" class="level-3">
                                     <a id="convert-currency-link" href="#convert-currency" class="level-3">Convert Currency</a>
                                 </li>
-                                <li id="reseller-account-item" class="level-2">
-                                    <a id="reseller-account-link" href="#reseller-account" class="level-2">Reseller Account</a>
-                                    <ul class="level-3" id="activate-reseller-account-list">
-                                        <li id="activate-reseller-account-item" class="level-4">
-                                            <a id="activate-reseller-account-link" href="#activate-reseller-account" class="level-3">Activate Reseller Account</a>
-                                        </li>
-                                        <li id="deactivate-reseller-account-item" class="level-3">
-                                            <a id="deactivate-reseller-account-link" href="#deactivate-reseller-account" class="level-3">Deactivate Reseller Account</a>
-                                        </li>
-                                        <li id="transfer-reseller-float-item" class="level-3">
-                                            <a id="transfer-reseller-float-link" href="#transfer-reseller-float" class="level-3">Transfer Funds To Reseller Account</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                
                                 <li id="wallet-payment-item" class="level-2">
                                     <a id="wallet-payments-link" href="#pay-someone" class="level-2">Pay Someone</a>
                                     <ul class="level-3" id="wallet-payment-list">
@@ -3213,8 +3200,8 @@
 
 
 
-        <h1 id="customers-and-suppliers">Customers & Suppliers </h1>
-        <p>This is the section where a Business adds customers and suppliers to the account.</p>
+        <h1 id="mis-suppliers">Managment Information System Suppliers </h1>
+        <p>This is the section where a company manages its suppliers in the Managment Information System.</p>
 
         <h2 id="get-company-list">List of Companies </h2>
 
@@ -3277,45 +3264,104 @@
                 ]</p>
         </blockquote>
 
-        <h2 id="get-customers-and-suppliers-list">List of Company Customers & Suppliers  </h2>
+        <h2 id="get-suppliers-list">List of  Suppliers  </h2>
 
-        <p>This section will take you through the steps for fetching a list of Company Customers & Suppliers
+        <p>This section will take you through the steps for fetching a list of Company Suppliers
             on Patasente API .</p>
         <p>A <strong>GET</strong> request should be made to this API endpoint</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/get-customers-and-suppliers/company</p>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-suppliers/supplier?</p>
         </blockquote>
-        <p>The parameters that should be sent to this endpoint are "<strong>skip</strong>" , "<strong>take</strong>" .To limit the number of results returned from the query, or to skip a given number of results in the query,
-            you may skip and take a given number of results. This also helps in pagination. A json response with the Company Customers & Suppliers will be returned </p>
+        <p>The parameters that should be sent to this endpoint are "<strong>search</strong>" ,"<strong>skip</strong>" , "<strong>take</strong>" .To limit the number of results returned from the query, or to skip a given number of results in the query,
+            you may skip and take a given number of results. This also helps in pagination. A json response with the Company Suppliers will be returned </p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/get-customers-and-suppliers/company?skip=0&take=7</p>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-suppliers/supplier?skip=0&take=7&search=Ivan</p>
         </blockquote>
         <blockquote>
             <p>[
                 {
-                "id": 2
-                "customer_or_supplier_id": 3,
-                "business_name": "Senior Developer",
-                "merchant_code": "M871054",
-                "currency_id":2,
-                "currency":"USD",
-                "products":[
-                {
-                "id": 1,
-                "company_id": 3,
-                "financial_instrument_id": null,
-                "name": "Board",
-                "current_stock": "10",
-                "optimum_stock": "100",
-                "unit_measure": 1,
-                "unit_price": 13000,
-                "previous_stock_date": "2019-01-03T19:41:00.000Z",
-                "currency_id": 1,
-                "type": "product",
+                    "id": 1215,
+                    "name": "Daywne Johnson",
+                    "customer_id": null,
+                    "merchant_code": "M0000011215",
+                    "phone_number": "256774222077",
+                    "location": "USA",
+                    "currency_id": null,
+                    "currency": "",
+                    "credit_limit": null,
+                    "ppi_rank": null,
+                    "id_number": null,
+                    "gender": "male",
+                    "dob": "1992-05-06",
+                    "farm_size": null,
+                    "email": null,
+                    "sacco_details": [
+                        {
+                            "id": 80,
+                            "bank_acc_number": "2345543",
+                            "sacco_branch": "California",
+                            "sacco_name": "Universal Studios",
+                            "payment_method": "sacco",
+                            "registered_name": "Rock"
+                        }
+                    ],
+                    "banking_details": [
+                        {
+                            "id": 79,
+                            "company_supplier_id": 1215,
+                            "first_name": null,
+                            "last_name": null,
+                            "registered_name": "The Rock",
+                            "bank_name": "CITIBANK UGANDA LIMITED  (TRADE SERVICES DEPT)",
+                            "bank_branch": "Ntinda",
+                            "bank_acc_number": "456789",
+                            "interswitch_payment_code": "1902464",
+                            "payment_method": "bank",
+                            "mobile_money_company": null,
+                            "mobile_money_phone": null,
+                            "country": "Uganda",
+                            "platform": "Web",
+                            "deleted": 0,
+                            "ip": "127.0.0.1",
+                            "created_at": "2021-11-13T01:32:19.000000Z",
+                            "updated_at": "2021-11-13T01:32:19.000000Z"
+                        }
+                    ],
+                    "mobile_money_details": [
+                        {
+                            "id": 78,
+                            "company_supplier_id": 1215,
+                            "first_name": "The Rock",
+                            "last_name": "Johnson",
+                            "registered_name": null,
+                            "bank_name": null,
+                            "bank_branch": null,
+                            "bank_acc_number": null,
+                            "interswitch_payment_code": null,
+                            "payment_method": "mobile",
+                            "mobile_money_company": 1,
+                            "mobile_money_phone": "256774222077",
+                            "country": "Uganda",
+                            "platform": "Web",
+                            "deleted": 0,
+                            "ip": "127.0.0.1",
+                            "created_at": "2021-11-13T01:32:19.000000Z",
+                            "updated_at": "2021-11-13T01:32:19.000000Z"
+                        }
+                    ],
+                    "type": "Supplier",
+                    "supplier_type": "individual",
+                    "created_at": "2021-11-13",
+                    "outstanding_starting_balance": 23000,
+                    "contact_person_name": null,
+                    "contact_person_phone": null,
+                    "number_of_members": 0,
+                    "incorporation_date": "2021-11-13",
+                    "center_setup_date": "2021-11-13",
+                    "photo": "https://storage.googleapis.com/patasente-prod-file-uploads/company-logos/image-missing.png",
+                    "incorporation_certificate": null
                 }
-                ],"type":"Supplier"},
-                {"business_name":"Junior Developer","customer_id":2,"merchant_code":"M528092",
-                "currency_id":2,"currency":"USD","products":[],"type":"Supplier"}]
+                ]
             </p>
         </blockquote>
         <p>Below are the fields required by the API</p>
@@ -3340,49 +3386,112 @@
                     <td>take</td>
                     <td>number</td>
                     <td>Yes</td>
-                    <td>This is number of items that should be fetched per request but default is 10.</td>
+                    <td>This is number of items that should be fetched per request but default is 15.</td>
+                </tr>
+                <tr>
+                    <td>search</td>
+                    <td>text</td>
+                    <td>No</td>
+                    <td>This is a search query for your request.</td>
                 </tr>
                 </tbody>
             </table>
         </div>
 
-        <h2 id="get-customer-or-supplier">Get a customer or supplier </h2>
-        <p>This section will take you through the steps for fetching a single  customer or supplier
+        <h2 id="get-supplier">Get a supplier </h2>
+        <p>This section will take you through the steps for fetching a single supplier
             on Patasente API .</p>
         <p>A <strong>GET</strong> request should be made to this API endpoint</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/get-customer-or-supplier/</p>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-supplier/</p>
         </blockquote>
         <p>The parameter that should be sent to this endpoint is the "id" of the customer or supplier ,  a json response with the company  customer or supplier will be returned</p>
         <blockquote>
-            <p>
-            <p>https://demo.patasente.com/phantom-api/get-customer-or-supplier/2</p>
-            </p>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-supplier/1215/M0000011215</p> 
         </blockquote>
         <blockquote>
             <p>
                 {
-                "id": 2
-                "customer_or_supplier_id": 3,
-                "business_name": "Senior Developer",
-                "merchant_code": "M871054",
-                "currency_id":2,
-                "currency":"USD",
-                "products":[
-                {
-                "id": 1,
-                "company_id": 3,
-                "financial_instrument_id": null,
-                "name": "Board",
-                "current_stock": "10",
-                "optimum_stock": "100",
-                "unit_measure": 1,
-                "unit_price": 13000,
-                "previous_stock_date": "2019-01-03T19:41:00.000Z",
-                "currency_id": 1,
-                "type": "product",
-                }
-                ],"type":"Supplier"},
+                    "id": 1215,
+                    "name": "Daywne Johnson",
+                    "customer_id": null,
+                    "merchant_code": "M0000011215",
+                    "phone_number": "256774222077",
+                    "location": "USA",
+                    "currency_id": null,
+                    "currency": "",
+                    "credit_limit": null,
+                    "ppi_rank": null,
+                    "id_number": null,
+                    "gender": "male",
+                    "dob": "1992-05-06",
+                    "farm_size": null,
+                    "email": null,
+                    "sacco_details": [
+                        {
+                            "id": 80,
+                            "bank_acc_number": "2345543",
+                            "sacco_branch": "California",
+                            "sacco_name": "Universal Studios",
+                            "payment_method": "sacco",
+                            "registered_name": "Rock"
+                        }
+                    ],
+                    "banking_details": [
+                        {
+                            "id": 79,
+                            "company_supplier_id": 1215,
+                            "first_name": null,
+                            "last_name": null,
+                            "registered_name": "The Rock",
+                            "bank_name": "CITIBANK UGANDA LIMITED  (TRADE SERVICES DEPT)",
+                            "bank_branch": "Ntinda",
+                            "bank_acc_number": "456789",
+                            "interswitch_payment_code": "1902464",
+                            "payment_method": "bank",
+                            "mobile_money_company": null,
+                            "mobile_money_phone": null,
+                            "country": "Uganda",
+                            "platform": "Web",
+                            "deleted": 0,
+                            "ip": "127.0.0.1",
+                            "created_at": "2021-11-13T01:32:19.000000Z",
+                            "updated_at": "2021-11-13T01:32:19.000000Z"
+                        }
+                    ],
+                    "mobile_money_details": [
+                        {
+                            "id": 78,
+                            "company_supplier_id": 1215,
+                            "first_name": "The Rock",
+                            "last_name": "Johnson",
+                            "registered_name": null,
+                            "bank_name": null,
+                            "bank_branch": null,
+                            "bank_acc_number": null,
+                            "interswitch_payment_code": null,
+                            "payment_method": "mobile",
+                            "mobile_money_company": 1,
+                            "mobile_money_phone": "256774222077",
+                            "country": "Uganda",
+                            "platform": "Web",
+                            "deleted": 0,
+                            "ip": "127.0.0.1",
+                            "created_at": "2021-11-13T01:32:19.000000Z",
+                            "updated_at": "2021-11-13T01:32:19.000000Z"
+                        }
+                    ],
+                    "type": "Supplier",
+                    "supplier_type": "individual",
+                    "created_at": "2021-11-13",
+                    "outstanding_starting_balance": 23000,
+                    "contact_person_name": null,
+                    "contact_person_phone": null,
+                    "number_of_members": 0,
+                    "incorporation_date": "2021-11-13",
+                    "center_setup_date": "2021-11-13",
+                    "photo": "https://storage.googleapis.com/patasente-prod-file-uploads/company-logos/image-missing.png",
+                    "incorporation_certificate": null
             </p>
         </blockquote>
         <p>Below are the fields required by the API</p>
@@ -3401,27 +3510,278 @@
                     <td>id</td>
                     <td>number</td>
                     <td>Yes</td>
-                    <td>This is id of the company customer or supplier</td>
+                    <td>This is id of the company supplier <a href="#get-suppliers-list">List of Company suppliers</a></td>
+                </tr>
+                <tr>
+                    <td>merchant_code</td>
+                    <td>text</td>
+                    <td>Yes</td>
+                    <td>This is merchant code of the company supplier from <a href="#get-suppliers-list">List of Company suppliers</a></td>
                 </tr>
                 </tbody>
             </table>
         </div>
 
-        <h2 id="add-customer-or-supplier">Add Customer or Supplier </h2>
-        <p>This section will take you through the steps for adding a customer or supplier to a company
+        <h2 id="add-supplier">Add Supplier </h2>
+        <p>This section will take you through the steps for adding a supplier to a company
             on Patasente API .</p>
         <p>A <strong>POST</strong> request should be made to this API endpoint</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-apiadd-customer-or-supplier</p>
+            <p>https://demo.patasente.com/phantom-api/deliveries/add-supplier</p>
         </blockquote>
-        <p>The parameter that should be sent to this endpoint is the "type" , "company_id"  .</p>
+        <p>There are 4 types of suppliers eg "individual" ,"center" , "company" ,"cooperative" <strong>(case sentive)</strong> and a post request with a supplier_type will differentiate them.</p>
 
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/add-document?add-customer-or-supplier?company_id=3&type=supplier
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=individual
+            </p>
+        </blockquote>
+    
+        <p>You can add a supplier who is already registered / has an account on Patasente by making a post request with a customer_or_supplier_id , this customer_or_supplier_id is the id of the company / business that is selected by the user</p>
+
+        <blockquote>
+            <p>
+                https://demo.patasente.com/phantom-api/add-supplier?supplier_type=individual&customer_or_supplier_id=23
+            </p>
+        </blockquote>
+
+        <p>If the post request has a supplier_type="individual" here are the parameters that should be sent.</p>
+        <blockquote>
+            <p>
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=individual&name=Jeo Doe&phone_number=07869594954&customer_or_supplier_id&id_number=65432345654&photo=base64Photo&email=momo19@gmail.com&location=ntungamo&dob=1993-03-03&gender=female&farm_size=120 acres&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Deo&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Joe Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Doe&mobile_money_details[0][last_name]=Jeo&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
+
+            </p>
+        </blockquote>
+        <p>If the post request has a supplier_type="company" here are the parameters that should be sent.</p>
+        <blockquote>
+            <p>
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=company&name=Angel's iniative&phone_number=07869594954&customer_or_supplier_id&photo=base65logo&email=momo19@gmail.com&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&incorporation_date=2007-10-20&incorporation_certificate=Base64Certificate&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
+
+            </p>
+        </blockquote>
+
+        <p>If the post request has a supplier_type="center" here are the parameters that should be sent.</p>
+        <blockquote>
+            <p>
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=center&name=Makindye&phone_number=07869594954&customer_or_supplier_id&email=momo19@gmail.com&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
+
+            </p>
+        </blockquote>
+        <p>If the post request has a supplier_type="cooperative" here are the parameters that should be sent.</p>
+        <blockquote>
+            <p>
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=cooperative&name=Makindye&phone_number=07869594954&customer_or_supplier_id&photo=base65logo&email=momo19@gmail.com&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&number_of_members=3&incorporation_date=2007-10-20&incorporation_certificate=Base64Certificate&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
+
+            </p>
+        </blockquote>
+        <p>If the request was successful, a response with success code 200 will be sent</p>
+        <blockquote>
+            <p>
+                {
+                "success":  "Supplier has been added to your list"
+                }
+            </p>
+        </blockquote>
+        <p>If the supplier already exist in a company's list, this response will be returned</p>
+        <blockquote>
+            <p>
+                {
+                "success":  "Already in your list"
+                }
+            </p>
+        </blockquote>
+        <p>If there is an error, a response with error code 400 will be sent</p>
+        <blockquote>
+            <p>
+                {
+                "error": "You can't add this company"
+                }
+            </p>
+        </blockquote>
+
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                    <th width="50%">Supplier type</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>customer_or_supplier_id</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is the id of the company from the <a href="#get-company-list">list of companies</a></td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>supplier_type</td>
+                    <td>text</td>
+                    <td>Yes</td>
+                    <td>The type of supplier. its either individual , center , company or cooperative <strong>case sentive</strong></td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>text</td>
+                    <td>Yes</td>
+                    <td>The name of the supplier , center , company or cooperative</td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>id_number</td>
+                    <td>text</td>
+                    <td>No</td>
+                    <td>The national id number of an  supplier </td>
+                    <td>individual</td>
+                </tr>
+                <tr>
+                    <td>photo</td>
+                    <td>base64</td>
+                    <td>No</td>
+                    <td>The photo or logo of the supplier</td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>phone_number</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>The phone number of the supplier </td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>email</td>
+                    <td>No</td>
+                    <td>The email of the supplier</td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>location</td>
+                    <td>text</td>
+                    <td>No</td>
+                    <td>The location of the supplier </td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>dob</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>The date of birth of the supplier</td>
+                    <td>individual</td>
+                </tr>
+                <tr>
+                    <td>gender</td>
+                    <td>enum('male','female')</td>
+                    <td>No</td>
+                    <td>The gender of the supplier,  it should either be male or female <strong>case senstive</strong></td>
+                    <td>Individual</td>
+                </tr>
+                <tr>
+                    <td>farm_size</td>
+                    <td>text</td>
+                    <td>No</td>
+                    <td>The farm size of the supplier </td>
+                    <td>individual</td>
+                </tr>
+                <tr>
+                    <td>outstanding_starting_balance</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>The outstanding startin _balance of the supplier</td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>number_of_members</td>
+                    <td>text</td>
+                    <td>No</td>
+                    <td>The number of members in a supplier cooperative or center</td>
+                    <td>cooperative , center</td>
+                </tr>
+                <tr>
+                    <td>incorporation_date</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>The date a supplier cooperative or company was incorporated</td>
+                    <td>cooperative, company</td>
+                </tr>
+                <tr>
+                    <td>incorporation_certificate</td>
+                    <td>base64</td>
+                    <td>No</td>
+                    <td>The incorporation certificate of a  cooperative or company</td>
+                    <td>cooperative, company</td>
+                </tr>
+                <tr>
+                    <td>center_setup_date</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>The date a supplier center was set up</td>
+                    <td>center</td>
+                </tr>
+                <tr>
+                    <td>contact_person_name</td>
+                    <td>text</td>
+                    <td>No</td>
+                    <td>The contact person's name for cooperative , center or company</td>
+                    <td>cooperative, center, company</td>
+                </tr>
+                <tr>
+                    <td>contact_person_phone</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>The contact person's phone number for cooperative , center or company</td>
+                    <td>cooperative, center, company</td>
+                </tr>
+                <tr>
+                    <td>banking_details</td>
+                    <td>array</td>
+                    <td>No</td>
+                    <td>The bank details of a suppler. The array should contain these variables 
+                      bank_name, bank_branch, registered_name , bank_acc_number ,interswitch_payment_code  <strong>this code can be got for list of supported banks on Patasente. <i>refer to the list you used on ADD BANK ACCOUNT </i></strong>, payment_method <strong>it should be bank</strong></td>
+                    <td>all</td>
+                </tr>
+                <tr>
+                    <td>mobile_money_details</td>
+                    <td>array</td>
+                    <td>No</td>
+                    <td>The mobile money details of a suppler. The array should contain these variables 
+                     mobile_money_company <strong>it should either be 1 for MTN or 2 for Airtel which are found here <a href="#list-phone-networks">list phone networks </a> </strong> ,mobile_money_phone , first_name , last_name, payment_method <strong>it should be mobile</strong></td>
+                    <td>all</td>
+                </tr>
+                <tr>
+                    <td>sacco_details</td>
+                    <td>array</td>
+                    <td>No</td>
+                    <td>The sacco details of a suppler. The array should contain these variables 
+                      sacco_name, sacco_branch, registered_name , bank_acc_number ,payment_method <strong>it should be sacco</strong></td>
+                    <td>all</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        
+        <h2 id="add-supplier">Update Supplier </h2>
+        <p>This section will take you through the steps for updating a supplier 
+            on Patasente API .</p>
+        <p>A <strong>POST</strong> request should be made to this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/update-supplier</p>
+        </blockquote>
+        <p>The parameter that should be sent to this endpoint .</p>
+
+        <blockquote>
+            <p>
+                https://demo.patasente.com/phantom-api/deliveries/update-supplier
             </p>
             <p>
-                https://demo.patasente.com/phantom-api/add-document?add-customer-or-supplier?company_id=3&type=customer
+                https://demo.patasente.com/phantom-api/deliveries/update-supplier
             </p>
         </blockquote>
         <p>If the request was successful, a response with success code 200 will be sent</p>
@@ -3476,18 +3836,18 @@
             </table>
         </div>
 
-        <h2 id="delete-customer-or-supplier">Delete customer or supplier </h2>
+        <h2 id="delete-supplier">Delete supplier </h2>
         <p>This section will take you through the steps for deleting a company's customer or supplier
             on Patasente API .</p>
         <p>A <strong>PUT</strong> request should be made to  this API endpoint</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/delete-customer-or-supplier/</p>
+            <p>https://demo.patasente.com/phantom-api/deliveries/delete-supplier/</p>
         </blockquote>
         <p>The parameter that should be sent to this endpoint is the "id" of the customer or supplier from the list.</p>
 
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/delete-customer-or-supplier/2
+                https://demo.patasente.com/phantom-api/deliveries/delete-supplier/2
             </p>
         </blockquote>
         <p>If the request was successful, a response with success code 200 will be sent</p>
@@ -5244,116 +5604,6 @@
                 </tbody>
             </table>
         </div>
-
-        <h1 id="reseller-account">Reseller Account</h1>
-        <p>This is the section where a company manages  it's reseller account on Patasente .</p>
-
-        <h2 id="activate-reseller-account">Activate Reseller Account</h2>
-        <p>This section will take you through the activating Reseller Account
-            on Patasente API. </p>
-
-        <p>A <strong>POST</strong> request should be made to this API endpoint</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/activate-reseller-account</p>
-        </blockquote>
-        <p><strong>NO</strong> parameter  should be sent to this endpoint </p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/activate-reseller-account</p>
-        </blockquote>
-        <p>A json response with 200 success code  will be returned</p>
-        <blockquote>
-            <p>{
-                "success": "Your Reseller Account is active"
-                }
-            </p>
-        </blockquote>
-
-        <p>If there any errors, a json response with 400 error code  will be returned</p>
-        <blockquote>
-            <p>{
-                "error": "Reseller Account Activation Failed"
-                }
-            </p>
-        </blockquote>
-
-        <h2 id="deactivate-reseller-account">Deactivate Reseller Account</h2>
-        <p>This section will take you through the deactivating Reseller Account
-            on Patasente API. </p>
-
-        <p>A <strong>POST</strong> request should be made to this API endpoint</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/deactivate-reseller-account</p>
-        </blockquote>
-        <p><strong>NO</strong> parameter  should be sent to this endpoint </p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/deactivate-reseller-account</p>
-        </blockquote>
-        <p>A json response with 200 success code will be returned</p>
-        <blockquote>
-            <p>{
-                "success": "Your Reseller Account is deactivated"
-                }
-            </p>
-        </blockquote>
-
-        <p>If there any errors, a json response with 400 error code  will be returned</p>
-        <blockquote>
-            <p>{
-                "error": "Reseller Account Deactivation Failed"
-                }
-            </p>
-        </blockquote>
-
-
-        <h2 id="transfer-reseller-float">Transfer Funds To Reseller Account</h2>
-        <p>This section will take you through transfering Float to a Reseller Account
-            on Patasente API. </p>
-
-        <p>A <strong>PUT</strong> request should be made to this API endpoint</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/wallet/transfer-funds-to-reseller-float</p>
-        </blockquote>
-        <p><strong>NO</strong> parameter  should be sent to this endpoint </p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/wallet/transfer-funds-to-reseller-float?amount=50000</p>
-        </blockquote>
-        <p>A json response with 200 success code will be returned</p>
-        <blockquote>
-            <p>{
-                "success": "50000 has been deposited to your Reseller Float"
-                }
-            </p>
-        </blockquote>
-
-        <p>If there any errors, a json response with 400 error code  will be returned</p>
-        <blockquote>
-            <p>{
-                "error": "Reseller Account is not active"
-                }
-            </p>
-        </blockquote>
-        <p>Below are the fields required by the API</p>
-        <div class="table-responsive align-content-sm-center">
-            <table  class="table table-borderless m-b-none table-hover">
-                <thead>
-                <tr>
-                    <th width="20%">Field</th>
-                    <th width="10%">Type</th>
-                    <th width="20%">Required</th>
-                    <th width="50%">Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>amount</td>
-                    <td>number</td>
-                    <td>Yes</td>
-                    <td>This is the amount to be deposited as Reseller Float</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
 
         <h1 id="pay-someone">Pay Someone</h1>
         <p>This is the section where a company makes it's payments e.g to a company's wallet ,to a bank account , to mobile money or buy airtime .</p>
