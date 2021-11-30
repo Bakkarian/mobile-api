@@ -4698,7 +4698,7 @@
         <p>The parameter that should be sent to this endpoint is the "type" , "transaction_type" , "supplier_id" ,"deduction_id","total","mis_transaction_type","payment_method_id"
              "reason" , "charge_bearer", "charge", "financial_instrument_id" and "amount". </p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/deliveries/pay-supplier-invoice?type=wallet&transaction_type=wallet payment&charge=500& amount=40000& charge_bearer=payer&company_id=5 &financial_instrument_id=4567&reason=invoice payment&bank_method=5</p>
+            <p>https://demo.patasente.com/phantom-api/deliveries/pay-supplier-invoice?financial_instrument_id=114&charge_bearer=beneficiary&type=cash&charge=0&amount=20000&reason=invoice payment&deduction_id=545&mis_transaction_type=payment&total=14500&supplier_id=1215 </p>
         </blockquote>
         <p>A json response with 200 success code  will be returned</p>
         <blockquote>
@@ -12035,6 +12035,7 @@
                 </tr>
                 </tbody>
             </table>
+        </div>
 
 
             <h2 id="get-activated-sente-cards">Get activate sente cards</h2>
@@ -12166,6 +12167,7 @@
                     </tr>
                     </tbody>
                 </table>
+            </div>
 
             <h2 id="unlock-sente-card">Lock Sente Card</h2>
             <p>This section will take you through activating a Sente Card
@@ -12213,6 +12215,7 @@
                     </tr>
                     </tbody>
                 </table>
+            </div>
 
             <h2 id="get-a-patasente-card">Get A Patasente Card </h2>
             <p>This section will fetch details of a single Sente card if you scan the QR Code 
