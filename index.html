@@ -124,6 +124,9 @@
                                 <li id="get-user-device-token-item" class="level-2">
                                     <a id="get-user-device-token-link" href="#get-user-device-token" class="level-2">Get User Device Token </a>
                                 </li>
+                                <li id="delete-user-device-token-item" class="level-2">
+                                    <a id="delete-user-device-token-link" href="#delete-user-device-token" class="level-2">Delete User Device Token </a>
+                                </li>
 
                             </ul>
                         </li>
@@ -307,6 +310,15 @@
                                 </li>
                                 <li id="pay-supplier-invoice-item" class="level-3">
                                     <a id="pay-supplier-invoice-link" href="#pay-supplier-invoice" class="level-3">Pay Supplier Delivery invoice</a>
+                                </li>
+                                <li id="get-outstanding-balance-list-item" class="level-3">
+                                    <a id="get-outstanding-balance-list-link" href="#get-outstanding-balance-list" class="level-3">Get outstanding balance list</a>
+                                </li>
+                                <li id="get-single-supplier-outstanding-balance-item" class="level-3">
+                                    <a id="get-single-supplier-outstanding-balance-link" href="#get-single-supplier-outstanding-balance" class="level-3">Get a single supplier outstanding balance</a>
+                                </li>
+                                <li id="pay-supplier-outstanding-balance-item" class="level-3">
+                                    <a id="pay-supplier-outstanding-balance-link" href="#pay-supplier-outstanding-balance" class="level-3">Pay supplier outstanding balance</a>
                                 </li>
                             </ul>
                         </li>
@@ -1285,6 +1297,48 @@
                     <td>This is the user device name  </td>
                 </tr>
 
+                </tbody>
+            </table>
+        </div>
+
+        <h1 id="delete-user-device-token">Delete User Device Token</h1>
+        <p>This section will take you through the steps for deleting user device token 
+            on Patasente API .</p>
+        <p>A <strong>PUT</strong> request should be made to  this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/delete-user-device-token</p>
+        </blockquote>
+        <p>The parameter that should be sent to this endpoint are "token"  ,</p>
+        <blockquote>
+
+            <p>https://demo.patasente.com/phantom-api/delete-user-device-token?token=3qw45e6r7ttgggu7675687688568</p>
+
+        </blockquote>
+
+        <p>If the request was successful, a response with success code 200 will be sent</p>
+        <blockquote>
+            <blockquote><p>{
+                "success": "Device Token deleted"
+                }</p></blockquote>
+        </blockquote>
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>string</td>
+                    <td>Yes</td>
+                    <td>This is the user device token  </td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -3239,7 +3293,7 @@
                 {
                     "id": 1215,
                     "name": "Daywne Johnson",
-                    "customer_id": null,
+                    "customer_or_supplier_id": null,
                     "merchant_code": "M0000011215",
                     "phone_number": "256774222077",
                     "location": "USA",
@@ -3371,7 +3425,7 @@
                 {
                     "id": 1215,
                     "name": "Daywne Johnson",
-                    "customer_id": null,
+                    "customer_or_supplier_id": null,
                     "merchant_code": "M0000011215",
                     "phone_number": "256774222077",
                     "location": "USA",
@@ -3505,14 +3559,14 @@
         <p>If the post request has a supplier_type="individual" here are the parameters that should be sent.</p>
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=individual&name=Jeo Doe&phone_number=07869594954&customer_or_supplier_id&id_number=65432345654&photo=base64Photo&email=momo19@gmail.com&location=ntungamo&dob=1993-03-03&gender=female&farm_size=120 acres&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Deo&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Joe Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Doe&mobile_money_details[0][last_name]=Jeo&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=individual&name=Jeo Doe&phone_number=07869594954&customer_or_supplier_id&id_number=65432345654&photo=base64Photo&email=momo19@gmail.com&location=ntungamo&dob=1993-03-03&gender=female&farm_size=120 acres&should_receive_sms_notifications=no&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Deo&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Joe Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Doe&mobile_money_details[0][last_name]=Jeo&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
 
             </p>
         </blockquote>
         <p>If the post request has a supplier_type="company" here are the parameters that should be sent.</p>
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=company&name=Angel's iniative&phone_number=07869594954&customer_or_supplier_id&photo=base65logo&email=momo19@gmail.com&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&incorporation_date=2007-10-20&incorporation_certificate=Base64Certificate&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=company&name=Angel's iniative&phone_number=07869594954&customer_or_supplier_id&photo=base65logo&email=momo19@gmail.com&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&incorporation_date=2007-10-20&should_receive_sms_notifications=yes&incorporation_certificate=Base64Certificate&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
 
             </p>
         </blockquote>
@@ -3520,14 +3574,14 @@
         <p>If the post request has a supplier_type="center" here are the parameters that should be sent.</p>
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=center&name=Makindye&phone_number=07869594954&customer_or_supplier_id&email=momo19@gmail.com&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=center&name=Makindye&phone_number=07869594954&customer_or_supplier_id&email=momo19@gmail.com&should_receive_sms_notifications=no&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
 
             </p>
         </blockquote>
         <p>If the post request has a supplier_type="cooperative" here are the parameters that should be sent.</p>
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=cooperative&name=Makindye&phone_number=07869594954&customer_or_supplier_id&photo=base65logo&email=momo19@gmail.com&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&number_of_members=3&incorporation_date=2007-10-20&incorporation_certificate=Base64Certificate&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=cooperative&name=Makindye&phone_number=07869594954&customer_or_supplier_id&photo=base65logo&email=momo19@gmail.com&should_receive_sms_notifications=yes&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&number_of_members=3&incorporation_date=2007-10-20&incorporation_certificate=Base64Certificate&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
 
             </p>
         </blockquote>
@@ -3551,7 +3605,7 @@
         <blockquote>
             <p>
                 {
-                "error": "You can't add this company"
+                "error": "You can't add this supplier"
                 }
             </p>
         </blockquote>
@@ -3640,12 +3694,20 @@
                     <td>Individual</td>
                 </tr>
                 <tr>
+                    <td>should_receive_sms_notifications</td>
+                    <td>enum('no','yes')</td>
+                    <td>Yes</td>
+                    <td>This field asks a supplier if they want to receive sms notification upon each delivery they make, a disclaimer should be added that when you select yes the supplier will be charged for this sms,  it should either be no or yes <strong>case senstive</strong></td>
+                    <td>All</td>
+                </tr>
+                <tr>
                     <td>farm_size</td>
                     <td>text</td>
                     <td>No</td>
                     <td>The farm size of the supplier </td>
                     <td>individual</td>
                 </tr>
+                
                 <tr>
                     <td>outstanding_starting_balance</td>
                     <td>number</td>
@@ -3735,36 +3797,28 @@
 
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/deliveries/update-supplier
+                https://demo.patasente.com/phantom-api/deliveries/update-supplier/1272
             </p>
-            <p>
-                https://demo.patasente.com/phantom-api/deliveries/update-supplier
-            </p>
+            
         </blockquote>
         <p>If the request was successful, a response with success code 200 will be sent</p>
         <blockquote>
             <p>
                 {
-                "success":  "Supplier has been added to your list"
+                "success":  "Supplier has been updated"
                 }
             </p>
         </blockquote>
-        <p>If the customer or supplier already exist in a company's bucket, this response will be returned</p>
-        <blockquote>
-            <p>
-                {
-                "success":  "Already on your list"
-                }
-            </p>
-        </blockquote>
+        
         <p>If there is an error, a response with error code 400 will be sent</p>
         <blockquote>
             <p>
                 {
-                "error": "You can't add this company"
+                "error": "supplier not found"
                 }
             </p>
         </blockquote>
+        
         <p>Below are the fields required by the API</p>
         <div class="table-responsive align-content-sm-center">
             <table  class="table table-borderless m-b-none table-hover">
@@ -3774,25 +3828,167 @@
                     <th width="10%">Type</th>
                     <th width="20%">Required</th>
                     <th width="50%">Description</th>
+                    <th width="50%">Supplier type</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>company_id</td>
+                    <td>id</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is the id of the supplier from the <a href="#get-suppliers-list">list of suppliers</a></td>
+                    <td>All</td>
+                </tr>
+                
+                <tr>
+                    <td>name</td>
                     <td>text</td>
                     <td>Yes</td>
-                    <td>This is the id of the company from the <a href="#get-company-list">list of companies</a></td>
+                    <td>The name of the supplier , center , company or cooperative</td>
+                    <td>All</td>
                 </tr>
                 <tr>
-                    <td>type</td>
-                    <td>boolean</td>
+                    <td>id_number</td>
+                    <td>text</td>
+                    <td>No</td>
+                    <td>The national id number of an  supplier </td>
+                    <td>individual</td>
+                </tr>
+                <tr>
+                    <td>photo</td>
+                    <td>base64</td>
+                    <td>No</td>
+                    <td>The photo or logo of the supplier</td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>phone_number</td>
+                    <td>number</td>
                     <td>Yes</td>
-                    <td>The type is either supplier or customer</td>
+                    <td>The phone number of the supplier </td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>email</td>
+                    <td>No</td>
+                    <td>The email of the supplier</td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>location</td>
+                    <td>text</td>
+                    <td>No</td>
+                    <td>The location of the supplier </td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>dob</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>The date of birth of the supplier</td>
+                    <td>individual</td>
+                </tr>
+                <tr>
+                    <td>gender</td>
+                    <td>enum('male','female')</td>
+                    <td>No</td>
+                    <td>The gender of the supplier,  it should either be male or female <strong>case senstive</strong></td>
+                    <td>Individual</td>
+                </tr>
+                <tr>
+                    <td>should_receive_sms_notifications</td>
+                    <td>enum('no','yes')</td>
+                    <td>Yes</td>
+                    <td>This field asks a supplier if they want to receive sms notification upon each delivery they make, a disclaimer should be added that when you select yes the supplier will be charged for this sms,  it should either be no or yes <strong>case senstive</strong></td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>farm_size</td>
+                    <td>text</td>
+                    <td>No</td>
+                    <td>The farm size of the supplier </td>
+                    <td>individual</td>
+                </tr>
+                
+                <tr>
+                    <td>outstanding_starting_balance</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>The outstanding startin _balance of the supplier</td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>number_of_members</td>
+                    <td>text</td>
+                    <td>No</td>
+                    <td>The number of members in a supplier cooperative or center</td>
+                    <td>cooperative , center</td>
+                </tr>
+                <tr>
+                    <td>incorporation_date</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>The date a supplier cooperative or company was incorporated</td>
+                    <td>cooperative, company</td>
+                </tr>
+                <tr>
+                    <td>incorporation_certificate</td>
+                    <td>base64</td>
+                    <td>No</td>
+                    <td>The incorporation certificate of a  cooperative or company</td>
+                    <td>cooperative, company</td>
+                </tr>
+                <tr>
+                    <td>center_setup_date</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>The date a supplier center was set up</td>
+                    <td>center</td>
+                </tr>
+                <tr>
+                    <td>contact_person_name</td>
+                    <td>text</td>
+                    <td>No</td>
+                    <td>The contact person's name for cooperative , center or company</td>
+                    <td>cooperative, center, company</td>
+                </tr>
+                <tr>
+                    <td>contact_person_phone</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>The contact person's phone number for cooperative , center or company</td>
+                    <td>cooperative, center, company</td>
+                </tr>
+                <tr>
+                    <td>banking_details</td>
+                    <td>array</td>
+                    <td>No</td>
+                    <td>The bank details of a suppler. The array should contain these variables 
+                      bank_name, bank_branch, registered_name , bank_acc_number ,interswitch_payment_code  <strong>this code can be got for list of supported banks on Patasente. <i>refer to the list you used on ADD BANK ACCOUNT </i></strong>, payment_method <strong>it should be bank</strong></td>
+                    <td>all</td>
+                </tr>
+                <tr>
+                    <td>mobile_money_details</td>
+                    <td>array</td>
+                    <td>No</td>
+                    <td>The mobile money details of a suppler. The array should contain these variables 
+                     mobile_money_company <strong>it should either be 1 for MTN or 2 for Airtel which are found here <a href="#list-phone-networks">list phone networks </a> </strong> ,mobile_money_phone , first_name , last_name, payment_method <strong>it should be mobile</strong></td>
+                    <td>all</td>
+                </tr>
+                <tr>
+                    <td>sacco_details</td>
+                    <td>array</td>
+                    <td>No</td>
+                    <td>The sacco details of a suppler. The array should contain these variables 
+                      sacco_name, sacco_branch, registered_name , bank_acc_number ,payment_method <strong>it should be sacco</strong></td>
+                    <td>all</td>
                 </tr>
                 </tbody>
             </table>
         </div>
-
+        
+        
         <h2 id="delete-supplier">Delete supplier </h2>
         <p>This section will take you through the steps for deleting a company's customer or supplier
             on Patasente API .</p>
@@ -3929,17 +4125,17 @@
             </table>
         </div>
 
-        <h2 id="get-supplier-advances">Get Supplier Advances</h2>
+        <h2 id="get-supplier-advances">Get a single Supplier Advances</h2>
 
         <p>This section will take you through the steps for fetching advances for a specific supplier
             on Patasente API. </p>
         <p>A <strong>GET</strong> request should be made to this API endpoint</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/deliveries/get-supplier-advances/</p>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-single-supplier-advances/</p>
         </blockquote>
         <p>The parameters that should be sent to this endpoint is "supplier_id", a json response with success code 200 will be returned</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/deliveries/get-supplier-advances/1206.</p>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-single-supplier-advances/1206.</p>
         </blockquote>
         <blockquote>
             <p>[
@@ -3981,7 +4177,7 @@
 
         <p>This section will take you through the steps for deleting an advance
             on Patasente API. </p>
-        <p>A <strong>PUT</strong> request should be made to this API endpoint</p>
+        <p>A <strong>POST</strong> request should be made to this API endpoint</p>
         <blockquote>
             <p>https://demo.patasente.com/phantom-api/deliveries/delete-advance</p>
         </blockquote>
@@ -4104,7 +4300,7 @@
 
         <p>This section will take you through the steps for deleting a deduction
             on Patasente API. </p>
-        <p>A <strong>PUT</strong> request should be made to this API endpoint</p>
+        <p>A <strong>POST</strong> request should be made to this API endpoint</p>
         <blockquote>
             <p>https://demo.patasente.com/phantom-api/deliveries/delete-deduction</p>
         </blockquote>
@@ -4205,6 +4401,12 @@
                     <td>enum</td>
                     <td>yes</td>
                     <td>This is the time of the day the delivery was made, the only allowed values are <strong>"morning" , "afternoon" ,"evening"</strong>.These values are case sensitive</td>
+                </tr>
+                <tr>
+                    <td>date</td>
+                    <td>date</td>
+                    <td>yes</td>
+                    <td>This is the date the delivery was made, this date should be either today or past dates NO future dates are allowed</td>
                 </tr>
                 
                 </tbody>
@@ -4571,7 +4773,287 @@
             </table>
         </div>
 
-        <h2 id="get-supplier-invoice-payment-details">Get supplier invoice payment details </h2>
+        <h2 id="get-single-supplier-outstanding-balance">Get single supplier outstanding balance </h2>
+        <p>This section will take you through the steps for fetching a single supplier outstanding-balance
+            on Patasente API .</p>
+        <p>A <strong>GET</strong> request should be made to this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-supplier-outstanding-balance</p>
+        </blockquote>
+        <p>The parameter that should be sent to this endpoint is the "id" and "merchant_code" of the invoice, a json response will be returned</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-supplier-outstanding-balance/1272/M0000011272</p>
+        </blockquote>
+        <blockquote>
+            <p>
+                {
+                    "supplier": {
+                        "id": 1272,
+                        "name": "Yiga Ivan",
+                        "customer_id": null,
+                        "merchant_code": "M0000011272",
+                        "currency_id": null,
+                        "currency": "",
+                        "outstanding_starting_balance": "0",
+                        "formatted_total_deductions": "0",
+                        "total_deductions": 1000,
+                        "total_closed_invoice_value": "10,000",
+                        "total_payable": 9000,
+                        "formatted_total_payable": "9,000"
+                    },
+                    "payment_details": [
+                        {
+                            "id": "",
+                            "payment_method": "cash",
+                            "registered_name": "Yiga Ivan",
+                            "acc_number": "",
+                            "service_provider": "Cash",
+                            "charge": 0
+                        },
+                        {
+                            "id": 142,
+                            "payment_method": "mobile",
+                            "service_provider": "AIRTEL",
+                            "registered_name": "Yiga Ivan",
+                            "acc_number": "25674000009",
+                            "charge": "1000"
+                        }
+                    ]
+                }
+            </p>
+        </blockquote>
+        <blockquote>
+            <p>If there any errors, a json response with 400 error code will be returned</p>
+        </blockquote>
+        <blockquote>
+            <p>{
+                "error": "Supplier doesn't exist."
+                }</p>
+        </blockquote>
+
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is the id of the supplier found here <a href="#get-outstanding-balance-list">Get outstanding balance list</a></td>
+                </tr>
+                <tr>
+                    <td>merchant_code</td>
+                    <td>text</td>
+                    <td>Yes</td>
+                    <td>This is the merchant code of the supplier here <a href="#get-outstanding-balance-list">Get outstanding balance list</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="pay-supplier-outstanding-balance">Pay supplier outstanding balance</h2>
+        <p>This section will take you through the steps for paying a supplier outstanding balance
+            on Patasente API. </p>
+
+        <p>A <strong>POST</strong> request should be made to this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/pay-supplier-outstanding-balance</p>
+        </blockquote>
+
+
+        <p>The parameter that should be sent to this endpoint is the "type" , "supplier_id" ,"total","payment_method_id". </p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/pay-supplier-outstanding-balance??supplier_id=1272&type=cash&total=1000&payment_method_id= </p>
+        </blockquote>
+        <p>A json response with 200 success code  will be returned</p>
+        <blockquote>
+            <p>{
+                    "success": "Transaction is being processed"
+                }
+            </p>
+        </blockquote>
+
+        <p>If there any errors, a json response with 400 error code  will be returned</p>
+        <blockquote>
+            <p>{
+                "error": "Your can't make payments at this moment"
+                }
+            </p>
+        </blockquote>
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>supplier_id</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is the <strong>id</strong> of the supplier from <a href="#get-suppliers-list">List of Company supliers </a> </td>
+                </tr>
+                <tr>
+                    <td>payment_method_id</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is the <strong>id</strong> of the payment_method_id. The payment_method_id is returned in a specific payment method.For this case its got when a user selects a payment method to use when making a payment which is found <a href="#get-single-supplier-outstanding-balance"> Get single supplier outstanding balance</a>  in the payment_details object "payment_details": [
+                        {
+                            "id": "",
+                            "payment_method": "mobile" ,
+                            "registered_name": "Daywne Johnson",
+                            "acc_number": "",
+                            "service_provider": "Cash",
+                            "<strong>charge": 1000</strong>
+                        }]
+                    </td>
+                </tr>
+                <tr>
+                    <td>total</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is the amount that should be paid </td>
+                </tr>
+        
+                <tr>
+                    <td>charge</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is the charge for the transaction.This charge is returned in a specific payment method.For this case its got when a user selects a payment method to use when making a payment which is found <a href="#get-single-supplier-outstanding-balance"> Get single supplier outstanding balance</a>  in the payment_details object "payment_details": [
+                        {
+                            "id": "",
+                            "payment_method": "mobile" ,
+                            "registered_name": "Daywne Johnson",
+                            "acc_number": "",
+                            "service_provider": "Cash",
+                            "<strong>charge": 1000</strong>
+                        }]
+                    </td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>text</td>
+                    <td>Yes</td>
+                    <td>This is the type of the payment method to be used. For this case its got when a user selects a payment method to use when making a payment which is found <a href="#get-single-supplier-outstanding-balance"> Get single supplier outstanding balance</a>  in the payment_details object "payment_details": [
+                        {
+                            "id": "",
+                            "<strong>payment_method": "cash" </strong>,
+                            "registered_name": "Daywne Johnson",
+                            "acc_number": "",
+                            "service_provider": "Cash",
+                            "charge": 0
+                        },
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="get-outstanding-balance-list">Get outstanding balance list</h2>
+
+        <p>This section will take you through the steps for fetching supplier outstanding balance list
+            on Patasente API. </p>
+        <p>A <strong>GET</strong> request should be made to this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-outstanding-balance-list</p>
+        </blockquote>
+        <p>The parameters that should be sent to this endpoint are "<strong>skip</strong>" , "<strong>take</strong>" .To limit the number of results returned from the query, or to skip a given number of results in the query,you may skip and take a given number of results. This also helps in pagination. "<strong>search</strong>" .A json response with the wallet balance will be returned</p>
+    
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-outstanding-balance-list/supplier?search=Ivan Yiga.</p>
+        </blockquote>
+        <blockquote>
+            <p>
+                [
+                    {
+                        "id": 1272,
+                        "name": "Yiga Ivan",
+                        "customer_id": null,
+                        "merchant_code": "M0000011272",
+                        "currency_id": null,
+                        "currency": "",
+                        "outstanding_starting_balance": "600",
+                        "total_deductions": "50",
+                        "total_closed_invoice_value": "1,600",
+                        "total_payable": 2150,
+                        "formatted_total_payable": "2,150"
+                    },
+                    {
+                        "id": 1272,
+                        "name": "George kalyango",
+                        "customer_id": null,
+                        "merchant_code": "M0000011273",
+                        "currency_id": null,
+                        "currency": "",
+                        "outstanding_starting_balance": "1000",
+                        "total_deductions": "550",
+                        "total_closed_invoice_value": "16,000",
+                        "total_payable": 16450,
+                        "formatted_total_payable": "16,450"
+                    }
+                ]
+            </p>
+        </blockquote>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>skip</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is number of items that should be skipped but default is 0</td>
+                </tr>
+                <tr>
+                    <td>take</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is number of items that should be fetched per request but default is 10.</td>
+                </tr>
+                <tr>
+                    <td>search</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is search query.</td>
+                </tr>
+                <tr>
+                    <td>from_date</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>This is date from where you want to start the filtering of results.</td>
+                </tr>
+                <tr>
+                    <td>days_from_date</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>These are the days from the start date <strong>from_date</strong> to the date you want to stop the filtering of results.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+<h2 id="get-supplier-invoice-payment-details">Get supplier invoice payment details </h2>
         <p>This section will take you through the steps for fetching a supplier invoice payment details
             on Patasente API .</p>
         <p>A <strong>GET</strong> request should be made to this API endpoint</p>
@@ -5469,6 +5951,7 @@
                 "send_receipt": true,
                 "transaction_type": "wallet payment",
                 "type": "wallet",
+                "transaction_direction": "Money out",
                 "created_at": {
                 "date": "2019-06-24 23:56:00.000000",
                 "timezone_type": 3,
@@ -5506,6 +5989,7 @@
                     "send_receipt":false,
                     "transaction_type":"mobile payment",
                     "type":"mobile",
+                    "transaction_direction": "Money out",
                     "created_at":{
                         "date":"2019-07-05 09:54:01.000000",
                         "timezone_type":3,
@@ -11902,7 +12386,7 @@
         </blockquote>
         <p>The parameters that should be sent to this endpoint are "card_id" ,"phone_number" ,"email" ,"name" ,"pin" and "document"</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/activate-sente-card?name=Ivan Yiga&phone_number=256783159235&card_id=24&email&pin=2123&document=base64:datafjhdhhvd=4</p>
+            <p>https://demo.patasente.com/phantom-api/activate-sente-card?name=Ivan Yiga&phone_number=256783159235&card_id=24&email&pin=2123&document=base64:datafjhdhhvd=4&card_agreement=true&platform_agreement=true</p>
         </blockquote>
         <p>A json response with 200 success code will be returned</p>
         <blockquote>
@@ -11939,7 +12423,8 @@
                     <td>card_id</td>
                     <td>number</td>
                     <td>Yes</td>
-                    <td>This is the id of the scanned card to be activated.</td>
+                    <td>This is the id of the scanned card to be activated.This card_id is in the last index position of the string forexample <strong>1613*****65219&11/23&UGX&0&Debit Card&108</strong><br> card_no : 1613*****65219<br>expiry date : 11/23 <br> currency : UGX <br> digit : 0 <br> card_type : Debit Card <br> <strong>card_id : 108</strong>
+                    </td>
                 </tr>
                 <tr>
                     <td>name</td>
@@ -11972,6 +12457,18 @@
                     <td>string</td>
                     <td>Yes</td>
                     <td>This is the identification document for the card holder, it can be Passport ,National ID or Drivers License. it should be a in base64 format</td>
+                </tr>
+                <tr>
+                    <td>card_agreement</td>
+                    <td>string</td>
+                    <td>Yes</td>
+                    <td>These are the card holders terms and conditions.The user has to agree to these terms and the value should be <strong>true</strong> case senstive</td>
+                </tr>
+                <tr>
+                    <td>platform_agreement</td>
+                    <td>string</td>
+                    <td>Yes</td>
+                    <td>These are the Patasente terms and conditions.The user has to agree to these terms and the value should be <strong>true</strong> case senstive</td>
                 </tr>
 
                 </tbody>
@@ -12088,7 +12585,7 @@
 
 
             <h2 id="get-user-sente-card">Get company sente card</h2>
-            <p>This section will take you through fetching a list of company Sente Cards
+            <p>This section will take you through fetching a list of a logged in user Sente Cards
                 on Patasente API. </p>
 
             <p>A <strong>GET</strong> request should be made to this API endpoint</p>
@@ -12169,7 +12666,7 @@
                 </table>
             </div>
 
-            <h2 id="unlock-sente-card">Lock Sente Card</h2>
+            <h2 id="unlock-sente-card">Unlock Sente Card</h2>
             <p>This section will take you through activating a Sente Card
                 on Patasente API. </p>
             <p>A <strong>PUT</strong> request should be made to this API endpoint</p>
