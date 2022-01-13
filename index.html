@@ -265,6 +265,9 @@
                                 <li id="add-supplier-item" class="level-3">
                                     <a id="add-supplier-link" href="#add-supplier" class="level-3">Add Supplier</a>
                                 </li>
+                                <li id="update-supplier-item" class="level-3">
+                                    <a id="update-supplier-link" href="#update-supplier" class="level-3">Update Supplier</a>
+                                </li>
                                 <li id="delete-supplier-item" class="level-3">
                                     <a id="delete-supplier-link" href="#delete-supplier" class="level-3">Delete Supplier</a>
                                 </li>
@@ -3781,26 +3784,12 @@
                       sacco_name, sacco_branch, registered_name , bank_acc_number ,payment_method <strong>it should be sacco</strong></td>
                     <td>all</td>
                 </tr>
-                <tr>
-                    <td>credit_limit</td>
-                    <td>number</td>
-                    <td>No</td>
-                    <td>This the credit limit for a supplier</td>
-                    <td>All</td>
-                </tr>
-                <tr>
-                    <td>can_use_credit</td>
-                    <td>enum(yes , no)</td>
-                    <td>No</td>
-                    <td>This is whether a supplier can use the credit or not .it should either be no or yes <strong>case senstive</strong></td>
-                    <td>All</td>
-                </tr>
                 </tbody>
             </table>
         </div>
         
         
-        <h2 id="add-supplier">Update Supplier </h2>
+        <h2 id="update-supplier">Update Supplier </h2>
         <p>This section will take you through the steps for updating a supplier 
             on Patasente API .</p>
         <p>A <strong>POST</strong> request should be made to this API endpoint</p>
@@ -3853,7 +3842,13 @@
                     <td>This is the id of the supplier from the <a href="#get-suppliers-list">list of suppliers</a></td>
                     <td>All</td>
                 </tr>
-                
+                <tr>
+                    <td>customer_or_supplier_id</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is the id of the company from the <a href="#get-company-list">list of companies</a></td>
+                    <td>All</td>
+                </tr>
                 <tr>
                     <td>name</td>
                     <td>text</td>
@@ -3997,6 +3992,20 @@
                     <td>The sacco details of a suppler. The array should contain these variables 
                       sacco_name, sacco_branch, registered_name , bank_acc_number ,payment_method <strong>it should be sacco</strong></td>
                     <td>all</td>
+                </tr>
+                <tr>
+                    <td>credit_limit</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This the credit limit for a supplier</td>
+                    <td>All</td>
+                </tr>
+                <tr>
+                    <td>can_use_credit</td>
+                    <td>enum(yes , no)</td>
+                    <td>No</td>
+                    <td>This is whether a supplier can use the credit or not .it should either be no or yes <strong>case senstive</strong></td>
+                    <td>All</td>
                 </tr>
                 </tbody>
             </table>
