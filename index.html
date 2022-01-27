@@ -268,6 +268,9 @@
                                 <li id="update-supplier-item" class="level-3">
                                     <a id="update-supplier-link" href="#update-supplier" class="level-3">Update Supplier</a>
                                 </li>
+                                <li id="update-supplier-photo-item" class="level-3">
+                                    <a id="update-supplier-photo-link" href="#update-supplier-photo" class="level-3">Update Supplier Photo</a>
+                                </li>
                                 <li id="delete-supplier-item" class="level-3">
                                     <a id="delete-supplier-link" href="#delete-supplier" class="level-3">Delete Supplier</a>
                                 </li>
@@ -1191,9 +1194,9 @@
         <blockquote>
             <p>https://demo.patasente.com/phantom-api/add-security-questions</p>
         </blockquote>
-        <p>The parameter that should be sent to this endpoint are "question_1_id" , "question_2_id" ,"answer_1" and "answer_2",  like</p>
+        <p>The parameter that should be sent to this endpoint are "question_1" , "question_2" ,"answer_1" and "answer_2",  like</p>
         <blockquote>
-            <blockquote><p>https://demo.patasente.com/phantom-api/add-security-questions?question_1_id=5&answer_1=Arsenal&question_2_id=10&answer_2=Max</p></blockquote>
+            <blockquote><p>https://demo.patasente.com/phantom-api/add-security-questions?question_1=5&answer_1=Arsenal&question_2=10&answer_2=Max</p></blockquote>
         </blockquote>
 
         <p>If the request was successful,  a response with success code 200 will be sent</p>
@@ -1215,7 +1218,7 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>question_1_id</td>
+                    <td>question_1</td>
                     <td>number</td>
                     <td>Yes</td>
                     <td>This is the first id of the security question chosen by the user </td>
@@ -1227,7 +1230,7 @@
                     <td>This is the answer to the first id of the security question chosen by the user </td>
                 </tr>
                 <tr>
-                    <td>question_2_id</td>
+                    <td>question_2</td>
                     <td>number</td>
                     <td>Yes</td>
                     <td>This is the second id of the security question chosen by the user </td>
@@ -3863,13 +3866,13 @@
                     <td>The national id number of an  supplier </td>
                     <td>individual</td>
                 </tr>
-                <tr>
+                <!--tr>
                     <td>photo</td>
                     <td>base64</td>
                     <td>No</td>
                     <td>The photo or logo of the supplier</td>
                     <td>All</td>
-                </tr>
+                </tr-->
                 <tr>
                     <td>phone_number</td>
                     <td>number</td>
@@ -4011,7 +4014,64 @@
             </table>
         </div>
         
-        
+        <h2 id="update-supplier-photo">Update Supplier Photo</h2>
+        <p>This section will take you through the steps for updating supplier photo
+            on Patasente API .</p>
+        <p>A <strong>PUT</strong> request should be made to  this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/update-supplier-logo</p>
+        </blockquote>
+        <p>Parameters that should be sent to this endpoint include "id" and "photo".
+            The <strong> id</strong> identifies the resource that should be updated</p>
+        <blockquote>
+            <p>
+                https://demo.patasente.com/phantom-api/deliveries/update-supplier-logo/2?image=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqQAAAJaCAIAAAB2vMKXAAAA AXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwdwjr+9vzrVrzIzt2X+SlhO9eIa HwCeYtgDwOUMewC4WmsdAuLQMiKK2zcAAAAASUVORK5CYII=AAAqQAAAJaCAIAAAB2 vMKXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwdw
+            </p>
+        </blockquote>
+
+        <p>If the request was successful,  a response with success code 200 will be sent</p>
+        <blockquote>
+            <p>{
+                "success": "Photo has updated"
+                }</p>
+        </blockquote>
+
+        <p>If the request wasn't successful,  a response with success code 404 will be sent</p>
+        <blockquote>
+            <p>{
+                "error": "Supplier not found"
+                }</p>
+        </blockquote>
+
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is the id of the supplier that ahould be updated  </td>
+                </tr>
+                <tr>
+                    <td>photo</td>
+                    <td>longText</td>
+                    <td>Yes</td>
+                    <td>A <strong>base64</strong> version of the picture/image/logo should be uploaded.</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
         <h2 id="delete-supplier">Delete supplier </h2>
         <p>This section will take you through the steps for deleting a company's customer or supplier
             on Patasente API .</p>
@@ -4414,8 +4474,8 @@
                     <td>products</td>
                     <td>array</td>
                     <td>Yes</td>
-                    <td>This is an array of product(s) and their qualities that are being delivered.Your products object array should contain the following variables 
-                    ,"products":[{"item":"Milk","qty":"34","price":600,"unit_measure":3}],"qualities":[{"level":"20","quality_measure_id":9}]}
+                    <td>This is an array of product(s)  that are being delivered.Your products object array should contain the following variables 
+                    ,"products":[{"item":"Milk","qty":"34","price":600,"unit_measure":3}]
                     </td>
                 </tr>
                 
@@ -4431,7 +4491,14 @@
                     <td>yes</td>
                     <td>This is the date the delivery was made, this date should be either today or past dates NO future dates are allowed</td>
                 </tr>
-                
+                <tr>
+                    <td>qualities</td>
+                    <td>array</td>
+                    <td>No</td>
+                    <td>This is an array of qualities of the products that are being delivered.The qualities associated to a product will be returned along with <a href="#get-company-products">product list </a>.
+                    "qualities":[{"level":"20","quality_measure_id":9}]}
+                    </td>
+                </tr>
                 </tbody>
             </table>
         </div>
