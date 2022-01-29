@@ -39,6 +39,12 @@
             fetcher: Flatdoc.github('USER/REPO')
         });
     </script>
+    <style>
+        .menu a,
+        .menu a:visited {
+          color: blue;
+        }
+    </style>
 </head>
 <body role='flatdoc'>
 
@@ -755,26 +761,26 @@
         <p>This section will take you through the steps for registering an account on Patasente API.</p>
         <p>A <strong>POST</strong> request should be made to  this API endpoint</p>  <pre><a class="url">https://demo.patasente.com/phantom-api/register</a></pre>
         <p>A user can register for an account using either an <b>email</b> or a <b>phone number</b> The parameters that should be sent to this endpoint by a user registering using <b>phone number</b> are
-            "registered_with" , "business_phone" , "account_type" ,  "name" ,  "password" ,  "account_currency" , like</p> <pre><a class="url">https://demo.patasente.com/phantom-api/register?registered_with=phone&
+            "registered_with" , "business_phone" , "account_type" ,  "name" ,  "password" ,  "account_currency" , like</p> <pre>https://demo.patasente.com/phantom-api/register?registered_with=phone&
         business_phone=25678000000&account_type=4&
-        account_currency=1password=myPassword&name=Patasente</a></pre>.
+        account_currency=1password=myPassword&name=Patasente</pre>.
         <p>If the phone number already exists a response with error code 404 will be sent back for example </p><pre> <a class="url">{ "error":"Account with that phone number already exists !" }.</a></pre>
-        <p> A 4 digit confirmation code that will be used to verify the account will be sent to the phone number used during registration.</p><pre><a class="url"> 1234</a> </pre>
+        <p> A 4 digit confirmation code that will be used to verify the account will be sent to the phone number used during registration.</p><pre>1234 </pre>
 
         <p> The parameters that should be sent to this endpoint by a user registering using <b>email</b> are
-            "registered_with" , "email" , "account_type" ,  "name" ,  "password" ,  "account_currency" , like </p><pre><a class="url">https://demo.patasente.com/phantom-api/register?registered_with=email
+            "registered_with" , "email" , "account_type" ,  "name" ,  "password" ,  "account_currency" , like </p><pre>https://demo.patasente.com/phantom-api/register?registered_with=email
         &email=dev@developer.dev&account_type=4&account_currency=1
-        password=myPassword&name=Patasente</a>.</pre>
+        password=myPassword&name=Patasente.</pre>
         <p>If the phone number already exists a response with error code 404 will be sent back for example  "Account with that email already exists !".</p>
-        <p> A confirmation code that will be used to verify the account will be sent to the email used during registration.</p><pre><a class="url">https://demo.patasente.com/register/verify?email=32943r8uj4vndurfviueiwrw</a> </pre>
+        <p> A confirmation code that will be used to verify the account will be sent to the email used during registration.</p><pre>https://demo.patasente.com/register/verify?email=32943r8uj4vndurfviueiwrw </pre>
 
 
         <p>If a user registration is successful a response with success code 200 will be sent  and an <strong>access token</strong> which will be attached to the header while requesting other resources.
-            <span> json response with a bearer token</span></p><pre><a class="url"> { "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImE2ZTkxZ
+            <span> json response with a bearer token</span></p><pre> { "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImE2ZTkxZ
         Dk4NDQxOGJlMDFlYTRjNWJjMDVhMjdjOTlmNzhkYWIxYzI2NGQ4YTg4ZmRj
         YmU5NGU4YjA0MWJhYzQ1YjlmM2U0NGE0YWE5MDk5In0.eyJhdWQiOiI
         yIiwianRpIjoiYTZlOTFkOTg0NDE4YmUwMWVhNGM1YmMwNWEyN2M" }
-          </a>
+          s
         </pre>
         <p>Below are the fields required by the API</p>
         <div class="table-responsive align-content-sm-center">
@@ -10217,7 +10223,7 @@
             <p>https://demo.patasente.com/phantom-api/save-discounted-invoice-request?invoice_no=900935082&discount_rate=4&
                 type=discounted-invoice&due_date=2020-05-27T08:41:24.558Z&issued_to=King&issued_by=Bryan Ways&
                 instrument_issue_date=2020-05-27T08:41:24.558Z&disbursement_amount=3247042&currency_id=1&
-                discount_value=207258&grand_total=3454300&loan_payment_frequency=Installments&loan_period=45&
+                discount_value=207258&total_value=3454300&loan_payment_frequency=Installments&loan_period=45&
                 loan_purpose=to buy a new car&attachment=base64;data:sfghjkdf vdbhjfbnsjdbjcubhfd vby8weyb</p>
         </blockquote>
         <p>.A json response will be returned with 200 status code.</p>
@@ -10296,7 +10302,7 @@
                     <td>This is the id the currency from <a href="#get-currencies">Get Currencies</a> </td>
                 </tr>
                 <tr>
-                    <td>grand_total</td>
+                    <td>total_value</td>
                     <td>number</td>
                     <td>Yes</td>
                     <td>This is the total value of the invoice </td>
@@ -10428,7 +10434,7 @@
                     <td>This is the id the currency from <a href="#get-currencies">Get Currencies</a> </td>
                 </tr>
                 <tr>
-                    <td>grand_total</td>
+                    <td>total_value</td>
                     <td>number</td>
                     <td>Yes</td>
                     <td>This is the total value of the purchase order </td>
@@ -10658,7 +10664,7 @@
             <p>https://demo.patasente.com/phantom-api/update-finance-request/2/FR5433?invoice_no=900935082&discount_rate=4&
                 due_date=2020-05-27T08:41:24.558Z&issued_to=King&issued_by=Bryan Ways&
                 instrument_issue_date=2020-05-27T08:41:24.558Z&disbursement_amount=3247042&currency_id=1&
-                discount_value=207258&grand_total=3454300&loan_payment_frequency=Installments&loan_period=45&
+                discount_value=207258&total_value=3454300&loan_payment_frequency=Installments&loan_period=45&
                 loan_purpose=to buy a new car&attachment=base64;data:sfghjkdf vdbhjfbnsjdbjcubhfd vby8weyb</p>
         </blockquote>
         <p>.A json response will be returned with 200 status code.</p>
@@ -10748,7 +10754,7 @@
                     <td>This is the id the currency from <a href="#get-currencies">Get Currencies</a> </td>
                 </tr>
                 <tr>
-                    <td>grand_total</td>
+                    <td>total_value</td>
                     <td>number</td>
                     <td>Yes</td>
                     <td>This is the total value of the invoice </td>
@@ -10887,7 +10893,7 @@
                     <td>This is the id the currency from <a href="#get-currencies">Get Currencies</a> </td>
                 </tr>
                 <tr>
-                    <td>grand_total</td>
+                    <td>total_value</td>
                     <td>number</td>
                     <td>Yes</td>
                     <td>This is the total value of the purchase order </td>
