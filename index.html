@@ -4214,6 +4214,103 @@
             </table>
         </div>
 
+        <h2 id="list-advance">List all Advances</h2>
+
+        <p>This section will take you through the steps for fetching all advances 
+            on Patasente API. </p>
+        <p>A <strong>GET</strong> request should be made to this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api//deliveries/get-supplier-transactions/advance/transaction?</p>
+        </blockquote>
+        <p>The parameters that should be sent to this endpoint are "skip" , "take" .To limit the number of results returned from the query, or to skip a given number of results in the query, you may skip and take a given number of results. This also helps in pagination. "search" , "from_date" , "to_date" .A json response with the wallet balance will be returned</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-supplier-transactions/advance/transaction?skip=0&take=10&search=patasente&from_date=2019-02-07&to_date=2019-06-05&.</p>
+        </blockquote>
+        <blockquote>
+            <p>[
+                {
+                    
+                    "id": 271,
+                    "currency_format": "UGX",
+                    "charge_currency_format": "",
+                    "amount": "10000",
+                    "transaction_id": "00000271",
+                    "names": "George Bakka",
+                    "phone": null,
+                    "balance": "0",
+                    "charge": "0",
+                    "transaction_status": "Processed",
+                    "payment_reason": "Testing",
+                    "paid_to": "George Bakka",
+                    "paid_by": "Ssekalegga Brian",
+                    "paid_to_merchant_code": "M0000011273",
+                    "paid_by_merchant_code": "M000001",
+                    "charge_bearer": null,
+                    "exchange_rate": null,
+                    "transaction_type": "cash payment",
+                    "type": "cash",
+                    "created_at": "2022-02-04",
+                    "wallet_balance": "0",
+                    "updated_at": "2022-02-04 16:59:37",
+                    "platform": "Web",
+                    "interswitch_payment_item": "",
+                    "advance_status": "outstanding",
+                    "deduction_status": null,
+                    "advance_due_date": "2022-02-11",
+                    "is_mis_transaction": "yes",
+                    "mis_transaction_type": "advance",
+                    "advance_transaction_id": null,
+                    "advance_period": 7,
+                    "company_supplier_id": 1273
+                  }
+                ]</p>
+        </blockquote>
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>skip</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is number of items that should be skipped but default is 0</td>
+                </tr>
+                <tr>
+                    <td>take</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is number of items that should be fetched per request but default is 10.</td>
+                </tr>
+                <tr>
+                    <td>search</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is search query.</td>
+                </tr>
+                <tr>
+                    <td>from_date</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>This is date from where you want to start the filtering of results.</td>
+                </tr>
+                <tr>
+                    <td>to_date</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>This is date from where you want to end the filtering of results.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
         <h2 id="get-supplier-advances">Get a single Supplier Advances</h2>
 
         <p>This section will take you through the steps for fetching advances for a specific supplier
@@ -4380,6 +4477,101 @@
                     <td>text</td>
                     <td>Yes</td>
                     <td>The default value for type should be <strong>deduction</strong></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="list-deductions">List all deductions</h2>
+
+        <p>This section will take you through the steps for fetching all deductions 
+            on Patasente API. </p>
+        <p>A <strong>GET</strong> request should be made to this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api//deliveries/get-supplier-transactions/deduction/transaction?</p>
+        </blockquote>
+        <p>The parameters that should be sent to this endpoint are "skip" , "take" .To limit the number of results returned from the query, or to skip a given number of results in the query, you may skip and take a given number of results. This also helps in pagination. "search" , "from_date" , "to_date" .A json response with the wallet balance will be returned</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-supplier-transactions/deduction/transaction?skip=0&take=10&search=patasente&from_date=2019-02-07&to_date=2019-06-05&.</p>
+        </blockquote>
+        <blockquote>
+            <p>[
+                {
+                    
+                    id": 272,
+                    "currency_format": "UGX",
+                    "charge_currency_format": "",
+                    "amount": "10000",
+                    "transaction_id": "00000272",
+                    "balance": "0",
+                    "charge": "0",
+                    "transaction_status": "Processed",
+                    "payment_reason": "Testing",
+                    "paid_to": "George Bakka",
+                    "paid_by": "Ssekalegga Brian",
+                    "paid_to_merchant_code": "M0000011273",
+                    "paid_by_merchant_code": "M000001",
+                    "charge_bearer": null,
+                    "exchange_rate": null,
+                    "transaction_type": "cash payment",
+                    "type": "cash",
+                    "created_at": "2022-02-04",
+                    "wallet_balance": "0",
+                    "updated_at": "2022-02-04 17:54:14",
+                    "platform": "Web",
+                    "interswitch_payment_item": "",
+                    "advance_status": null,
+                    "deduction_status": "outstanding",
+                    "advance_due_date": null,
+                    "is_mis_transaction": "yes",
+                    "mis_transaction_type": "deduction",
+                    "advance_transaction_id": "00000271",
+                    "advance_period": null,
+                    "company_supplier_id": 1273
+                  }
+                ]</p>
+        </blockquote>
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>skip</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is number of items that should be skipped but default is 0</td>
+                </tr>
+                <tr>
+                    <td>take</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is number of items that should be fetched per request but default is 10.</td>
+                </tr>
+                <tr>
+                    <td>search</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is search query.</td>
+                </tr>
+                <tr>
+                    <td>from_date</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>This is date from where you want to start the filtering of results.</td>
+                </tr>
+                <tr>
+                    <td>to_date</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>This is date from where you want to end the filtering of results.</td>
                 </tr>
                 </tbody>
             </table>
