@@ -215,6 +215,12 @@
                                         <li id="update-mobile-money-item" class="level-3">
                                             <a id="update-mobile-money-link" href="#update-mobile-money" class="level-3">Update Mobile Money Number</a>
                                         </li>
+                                        <li id="verify-payment-method-item" class="level-3">
+                                            <a id="verify-payment-method-link" href="#verify-payment-method" class="level-3">Verify Payment Method</a>
+                                        </li>
+                                        <li id="resend-payment-method-verification-code-item" class="level-3">
+                                            <a id="resend-payment-method-verification-code-link" href="#resend-payment-method-verification-code" class="level-3">Resend Payment Method Verification Code</a>
+                                        </li>
                                         <li id="delete-mobile-money-item" class="level-3">
                                             <a id="delete-mobile-money-link" href="#delete-mobile-money" class="level-3">Delete Mobile Money Number</a>
                                         </li>
@@ -2636,6 +2642,89 @@
                     <td>Yes</td>
                     <td>This the registered mobile money phone number and it should be in international format <strong>without plus (+)</strong> sign </td>
                 </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="verify-payment-method">Verify Payment Method </h2>
+        <p>This section will take you through the steps for verifying a payment method for a company on Patasente API .</p>
+
+        <p>A <strong>PUT</strong> request should be made to  this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/payment/phone-code-verification</p>
+        </blockquote>
+        <p>The parameter that should be sent to this endpoint is "code" and "id" like</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/payment/phone-code-verification?code=3035&id=4</p>
+        </blockquote>
+        <p>If the verification code  doesn't  match the code in the system, a response with error code 404 will be sent back. for example</p>
+        <blockquote><p>{ "error": "Your verification code doesn't match" }</p></blockquote>
+
+        <p>If the verification code  matches in the system, a response with success code 200 will be sent </p>
+        <blockquote><p>{ "success": "Your bank account has been verified" }</p></blockquote>
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is the id of the payment method from list of <a href="#list-banks">Bank Accounts</a> , <a href="#list-mobile-money">Mobile Money numbers</a> or <a href="#list-website-widgets">Website collection Widgets</a> </td>
+                </tr>
+                <tr>
+                    <td>code</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is a 4 digit number that has been sent to user's phone number or email </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="resend-payment-method-verification-code">Resend Payment Method Verification Code </h2>
+        <p>This section will take you through the steps for resending a payment method verification code for a company on Patasente API .</p>
+
+        <p>A <strong>PUT</strong> request should be made to  this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/payment/resend-phone-verification-code</p>
+        </blockquote>
+        <p>The parameter that should be sent to this endpoint is  "id" like</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/payment/resend-phone-verification-code/4</p>
+        </blockquote>
+        <p>If the verification code  doesn't  match the code in the system, a response with error code 404 will be sent back. for example</p>
+        <blockquote><p>{ "error": "Payment method not found" }</p></blockquote>
+
+        <p>If the verification code  matches in the system, a response with success code 200 will be sent </p>
+        <blockquote><p>{ "success": "A four (4) digit code has been sent" }</p></blockquote>
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is the id of the payment method from list of <a href="#list-banks">Bank Accounts</a> , <a href="#list-mobile-money">Mobile Money numbers</a> or <a href="#list-website-widgets">Website collection Widgets</a> </td>
+                </tr>
+            
                 </tbody>
             </table>
         </div>
