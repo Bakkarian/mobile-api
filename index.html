@@ -317,12 +317,7 @@
                                 <li id="get-delivery-item" class="level-3">
                                     <a id="get-single-delivery-link" href="#get-single-delivery" class="level-3">Get a single delivery</a>
                                 </li>
-                                <li id="close-delivery-item" class="level-3">
-                                    <a id="close-delivery-link" href="#close-delivery" class="level-3">Close delivery</a>
-                                </li>
-                                <li id="open-delivery-item" class="level-3">
-                                    <a id="open-delivery-link" href="#open-delivery" class="level-3">Open delivery</a>
-                                </li>
+                                
                                 <li id="get-supplier-invoice-payment-details-item" class="level-3">
                                     <a id="get-supplier-invoice-payment-details-link" href="#get-supplier-invoice-payment-details" class="level-3">Get delivery invoice payment details</a>
                                 </li>
@@ -347,11 +342,9 @@
                                 <li id="get-company-product-item" class="level-3">
                                     <a id="get-company-product-link" href="#get-company-products" class="level-3">List of Company Products</a>
                                 </li>
-                                <li id="get-company-services-item" class="level-3">
-                                    <a id="get-company-services-link" href="#get-company-services" class="level-3">List of Company Services</a>
-                                </li>
-                                <li id="get-product-or-service-item" class="level-3">
-                                    <a id="get-product-or-service-link" href="#get-product-or-service" class="level-3">Get Product or Service</a>
+                               
+                                <li id="get-product-item" class="level-3">
+                                    <a id="get-product-link" href="#get-product" class="level-3">Get Product</a>
                                 </li>
                                 <li id="get-unit-measure-item" class="level-3">
                                     <a id="get-unit-measure-link" href="#get-unit-measure" class="level-3">Get Unit Measure</a>
@@ -359,16 +352,12 @@
                                 <li id="add-product-item" class="level-3">
                                     <a id="add-product-link" href="#add-product" class="level-3">Add Product</a>
                                 </li>
-                                <li id="add-service-item" class="level-3">
-                                    <a id="add-service-link" href="#add-service" class="level-3">Add Service</a>
-                                </li>
+                               
                                 <li id="update-product-item" class="level-3">
                                     <a id="update-product-link" href="#update-product" class="level-3">Update Product</a>
                                 </li>
-                                <li id="update-service-item" class="level-3">
-                                    <a id="update-service-link" href="#update-service" class="level-3">Update Service</a>
-                                </li>
-                                
+                               
+                            
                             </ul>
                         </li>
                         <li id="wallet-item" class="level-2">
@@ -3653,21 +3642,21 @@
 
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/add-supplier?supplier_type=individual&customer_or_supplier_id=23
+                https://demo.patasente.com/phantom-api/add-supplier?supplier_type=individual&customer_or_supplier_id=23&product_id=4
             </p>
         </blockquote>
 
         <p>If the post request has a supplier_type="individual" here are the parameters that should be sent.</p>
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=individual&name=Jeo Doe&phone_number=07869594954&customer_or_supplier_id&id_number=65432345654&photo=base64Photo&email=momo19@gmail.com&location=ntungamo&dob=1993-03-03&gender=female&farm_size=120 acres&should_receive_sms_notifications=no&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Deo&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Joe Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Doe&mobile_money_details[0][last_name]=Jeo&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=individual&name=Jeo Doe&phone_number=07869594954&customer_or_supplier_id&id_number=65432345654&product_id=4&photo=base64Photo&email=momo19@gmail.com&location=ntungamo&dob=1993-03-03&gender=female&farm_size=120 acres&should_receive_sms_notifications=no&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Deo&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Joe Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Doe&mobile_money_details[0][last_name]=Jeo&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
 
             </p>
         </blockquote>
         <p>If the post request has a supplier_type="company" here are the parameters that should be sent.</p>
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=company&name=Angel's iniative&phone_number=07869594954&customer_or_supplier_id&photo=base65logo&email=momo19@gmail.com&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&incorporation_date=2007-10-20&should_receive_sms_notifications=yes&incorporation_certificate=Base64Certificate&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=company&name=Angel's iniative&phone_number=07869594954&product_id=4&customer_or_supplier_id&photo=base65logo&email=momo19@gmail.com&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&incorporation_date=2007-10-20&should_receive_sms_notifications=yes&incorporation_certificate=Base64Certificate&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
 
             </p>
         </blockquote>
@@ -3675,14 +3664,14 @@
         <p>If the post request has a supplier_type="center" here are the parameters that should be sent.</p>
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=center&name=Makindye&phone_number=07869594954&customer_or_supplier_id&email=momo19@gmail.com&should_receive_sms_notifications=no&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=center&name=Makindye&phone_number=07869594954&customer_or_supplier_id&product_id=4&email=momo19@gmail.com&should_receive_sms_notifications=no&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
 
             </p>
         </blockquote>
         <p>If the post request has a supplier_type="cooperative" here are the parameters that should be sent.</p>
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=cooperative&name=Makindye&phone_number=07869594954&customer_or_supplier_id&photo=base65logo&email=momo19@gmail.com&should_receive_sms_notifications=yes&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&number_of_members=3&incorporation_date=2007-10-20&incorporation_certificate=Base64Certificate&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
+                https://demo.patasente.com/phantom-api/deliveries/add-supplier?supplier_type=cooperative&name=Makindye&phone_number=07869594954&customer_or_supplier_id&product_id=4&photo=base65logo&email=momo19@gmail.com&should_receive_sms_notifications=yes&location=ntungamo&credit_limit&ppi_rqnk&outstanding_starting_balance=23000&number_of_members=3&incorporation_date=2007-10-20&incorporation_certificate=Base64Certificate&contact_person_name=Jane Doe&contact_person_phone=07893459324&banking_details[0][bank_name]=Equity bank&banking_details[0][bank_branch]=Ebb&banking_details[0][registered_name]=Joe Doe&banking_details[0][bank_acc_number]=6859403&banking_details[0][interswitch_payment_code]=434032&banking_details[0][payment_method]=bank&sacco_details[0][registered_name]=Jeo Doe&sacco_details[0][sacco_name]=Bulindo sacco&sacco_details[0][payment_method]=sacco&sacco_details[0][bank_acc_number]=68594033202&sacco_details[0][sacco_branch]=Kira      &mobile_money_details[0][first_name]=Joe&mobile_money_details[0][last_name]=Doe&mobile_money_details[0][mobile_money_company]=1&mobile_money_details[0][payment_method]=mobile&mobile_money_details[0][mobile_money_phone]=07756859403
 
             </p>
         </blockquote>
@@ -3736,6 +3725,13 @@
                     <td>text</td>
                     <td>Yes</td>
                     <td>The type of supplier. its either individual , center , company or cooperative <strong>case sentive</strong></td>
+                    <td>All</td>
+                </tr>
+				<tr>
+                    <td>product_id</td>
+                    <td>text</td>
+                    <td>Yes</td>
+                    <td>The id of the product from the buyer's List of <a href="#get-company-products">Products / Pricelist</a> </td>
                     <td>All</td>
                 </tr>
                 <tr>
@@ -4806,72 +4802,134 @@
             <p>https://demo.patasente.com/phantom-api/deliveries/get-supplier-deliveries/deliveries?search=Daywne Johnson.</p>
         </blockquote>
         <blockquote>
-            <p>[
-                {
-                    "to_merchant_code": "M000001",
-                    "from_merchant_code": "M0000011206",
-                    "logged_id": 6,
-                    "id": 116,
-                    "generated_instrument_no": "INV00000116",
-                    "user_id": null,
-                    "from_company_id": null,
-                    "to_company_id": 6,
-                    "from_name": "Patasente Limited",
-                    "to_name": "Ssekalegga Brian",
-                    "grand_total": "49,100",
-                    "type": "invoice",
-                    "is_automated_recurring_template": "no",
-                    "currency_id": 1,
-                    "currency_format": "UGX",
-                    "current_date": "2021-11-29",
-                    "status": 0,
-                    "is_mis_financial_instrument_closed": "no",
-                    "payment_status": 0,
-                    "delivery_count": 293,
-                    "delivery_qtys": [
-                        "23",
-                        "23",
-                        "23",
-                        "23",
-                        "23",
-                        "89",
-                        "89"
-                    ],
-                    "total_deductions": "20,000",
-                    "outstanding": "29,100"
-                },
-                {
-                    "to_merchant_code": "M000001",
-                    "from_merchant_code": "M0000011215",
-                    "logged_id": 6,
-                    "id": 114,
-                    "generated_instrument_no": "INV00000114",
-                    "user_id": null,
-                    "from_company_id": null,
-                    "to_company_id": 6,
-                    "from_name": "Daywne Johnson",
-                    "to_name": "Ssekalegga Brian",
-                    "grand_total": "272,380",
-                    "type": "invoice",
-                    "is_automated_recurring_template": "no",
-                    "currency_id": 1,
-                    "currency_format": "UGX",
-                    "current_date": "2021-11-29",
-                    "status": 0,
-                    "is_mis_financial_instrument_closed": "no",
-                    "payment_status": 0,
-                    "delivery_count": 132,
-                    "delivery_qtys": [
-                        "70",
-                        "34",
-                        "5",
-                        "23"
-                    ],
-                    "total_deductions": "0",
-                    "outstanding": "272,380"
-                }
-                
-            ]</p>
+            <p>
+				{
+			  "table_headers": [
+				"Supplier",
+				"",
+				"Mon-12-Sep",
+				"Tue-13-Sep",
+				"Wed-14-Sep",
+				"Thu-15-Sep",
+				"Fri-16-Sep",
+				"Sat-17-Sep",
+				"Sun-18-Sep",
+				"Action"
+			  ],
+			  "deliveries": [
+				{
+				  "supplier_id": 1285,
+				  "supplier": "Group Limited",
+				  "supplier_merchant_code": "M0000011285",
+				  "products": [
+					{
+					  "id": 801,
+					  "qty": 0,
+					  "price": "600"
+					},
+					{
+					  "id": 802,
+					  "qty": 0,
+					  "price": "600"
+					},
+					{
+					  "id": 803,
+					  "qty": 0,
+					  "price": "600"
+					},
+					{
+					  "id": 804,
+					  "qty": 43,
+					  "price": "600"
+					},
+					{
+					  "id": 805,
+					  "qty": 870,
+					  "price": "700"
+					},
+					{
+					  "id": 806,
+					  "qty": 0,
+					  "price": "600"
+					},
+					{
+					  "id": 807,
+					  "qty": 0,
+					  "price": "600"
+					},
+					{
+					  "id": 808,
+					  "qty": 0,
+					  "price": "600"
+					},
+					{
+					  "id": 842,
+					  "qty": 3564,
+					  "price": "600"
+					},
+					{
+					  "id": 843,
+					  "qty": 3564,
+					  "price": "600"
+					}
+				  ],
+				  "edit": false,
+				  "id": 212,
+				  "generated_instrument_no": "INV00000212"
+				},
+				{
+				  "supplier_id": 1283,
+				  "supplier": "Dairy",
+				  "supplier_merchant_code": "M0000011283",
+				  "products": [
+					{
+					  "id": 782,
+					  "qty": 0,
+					  "price": 0
+					},
+					{
+					  "id": 783,
+					  "qty": 0,
+					  "price": 0
+					},
+					{
+					  "id": 784,
+					  "qty": 0,
+					  "price": 0
+					},
+					{
+					  "id": 785,
+					  "qty": 0,
+					  "price": 0
+					},
+					{
+					  "id": 786,
+					  "qty": 0,
+					  "price": 0
+					},
+					{
+					  "id": 787,
+					  "qty": 0,
+					  "price": 0
+					},
+					{
+					  "id": 788,
+					  "qty": 0,
+					  "price": 0
+					},
+					{
+					  "id": 789,
+					  "qty": 0,
+					  "price": 0
+					}
+				  ],
+				  "edit": false,
+				  "id": 210,
+				  "generated_instrument_no": "INV00000210"
+				},
+			  ]
+			}
+			</p>
         </blockquote>
         <div class="table-responsive align-content-sm-center">
             <table  class="table table-borderless m-b-none table-hover">
@@ -5060,96 +5118,7 @@
             </table>
         </div>
 
-        <h2 id="close-delivery">Close supplier delivery invoice</h2>
-
-        <p>This section will take you through the steps for Closing a supplier delivery invoice
-            on Patasente API. </p>
-        <p>A <strong>PUT</strong> request should be made to this API endpoint</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/deliveries/close-invoice</p>
-        </blockquote>
-        <p>The parameters that should be sent to this endpoint are  "id" , "generated_instrument_no" , a json response with success code 200 will be returned</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/deliveries/close-invoice/114/INV00000114 .</p>
-        </blockquote>
-        <blockquote>
-            <p>{
-                "success": "Invoice has been closed"
-                }</p>
-        </blockquote>
-        <p>Below are the fields required by the API</p>
-        <div class="table-responsive align-content-sm-center">
-            <table  class="table table-borderless m-b-none table-hover">
-                <thead>
-                <tr>
-                    <th width="20%">Field</th>
-                    <th width="10%">Type</th>
-                    <th width="20%">Required</th>
-                    <th width="50%">Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>id</td>
-                    <td>number</td>
-                    <td>Yes</td>
-                    <td>This is the id of the supplier delivery invoice found here <a href="#list-deliveries">list all deliveries</a></td>
-                </tr>
-                <tr>
-                    <td>generated_instrument_no</td>
-                    <td>text</td>
-                    <td>Yes</td>
-                    <td>This is the generated instrument no of the supplier delivery invoice found here <a href="#list-deliveries">list all deliveries</a></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h2 id="open-delivery">Open supplier delivery invoice</h2>
-
-        <p>This section will take you through the steps for opening a supplier delivery invoice
-            on Patasente API. </p>
-        <p>A <strong>PUT</strong> request should be made to this API endpoint</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/deliveries/open-invoice</p>
-        </blockquote>
-        <p>The parameters that should be sent to this endpoint are  "id" , "generated_instrument_no" , a json response with success code 200 will be returned</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/deliveries/open-invoice/114/INV00000114 .</p>
-        </blockquote>
-        <blockquote>
-            <p>{
-                "success": "Invoice has been opened"
-                }</p>
-        </blockquote>
-        <p>Below are the fields required by the API</p>
-        <div class="table-responsive align-content-sm-center">
-            <table  class="table table-borderless m-b-none table-hover">
-                <thead>
-                <tr>
-                    <th width="20%">Field</th>
-                    <th width="10%">Type</th>
-                    <th width="20%">Required</th>
-                    <th width="50%">Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>id</td>
-                    <td>number</td>
-                    <td>Yes</td>
-                    <td>This is the id of the supplier delivery invoice found here <a href="#list-deliveries">list all deliveries</a></td>
-                </tr>
-                <tr>
-                    <td>generated_instrument_no</td>
-                    <td>text</td>
-                    <td>Yes</td>
-                    <td>This is the generated instrument no of the supplier delivery invoice found here <a href="#list-deliveries">list all deliveries</a></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
+       
         <h2 id="get-single-supplier-outstanding-balance">Get single supplier outstanding balance </h2>
         <p>This section will take you through the steps for fetching a single supplier outstanding-balance
             on Patasente API .</p>
@@ -5728,52 +5697,16 @@
                 ]</p>
         </blockquote>
 
-        <h2 id="get-company-services">List of Company Services </h2>
-
-        <p>This section will take you through the steps for fetching a list of company services
-            on Patasente API.</p>
+       
+        <h2 id="get-product">Get a Product </h2>
+        <p>This section will take you through the steps for fetching a single on Patasente API .</p>
         <p>A <strong>GET</strong> request should be made to this API endpoint</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/get-company-services</p>
-        </blockquote>
-        <p><strong>NO</strong> parameter  should be sent to this endpoint , a json response with the list of company services will be returned</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/get-company-services .</p>
-        </blockquote>
-        <blockquote>
-            <p>[
-                {
-                "id": 6,
-                "service_name": "Website Designing",
-                "description": "Eagles eye",
-                "deleted": 0,
-                "created_at": {
-                "date": "2019-01-21 19:55:05.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-                },
-                "updated_at": {
-                "date": "2019-01-21 19:55:05.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-                },
-                "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4UH0RXhpZgAATU0AKgAAAAgABgALAAIA
-                AAAmAAAIYgESAAMAAAABAAEAAAExAAIAAAAmAAAIiAEyAAIAAAAUAAAIrodpAAQA
-                AAABAAAIwuocAAcAAAgMAAAAVgAA"
-                },
-                ]</p>
-        </blockquote>
-
-        <h2 id="get-product-or-service">Get a Product or a Service </h2>
-        <p>This section will take you through the steps for fetching a single product or service
-            on Patasente API .</p>
-        <p>A <strong>GET</strong> request should be made to this API endpoint</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/get-product-or-service</p>
+            <p>https://demo.patasente.com/phantom-api/get-product</p>
         </blockquote>
         <p>The parameter that should be sent to this endpoint is the "id" of the product or service,  a json response with the product or service will be returned</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/get-product-or-service/2</p>
+            <p>https://demo.patasente.com/phantom-api/get-product/2</p>
         </blockquote>
         <blockquote>
             <p>
@@ -6051,121 +5984,16 @@
             </table>
         </div>
 
+        <h2 id="delete-product">Delete Product</h2>
 
-        <h2 id="add-service">Add Service</h2>
-
-        <p>This section will take you through the steps for adding a service
-            on Patasente API. </p>
-        <p>A <strong>POST</strong> request should be made to this API endpoint</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/add-service</p>
-        </blockquote>
-        <p>The parameters that should be sent to this endpoint are  "service_name" , "description" and "image", a json response with success code 200 will be returned</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/add-service?description=This is a test service post&service_name=Testing Api&image=data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4UH0RXhpZgAATU0AKgAAAAgABgALAAIA AAAmAAAIYgESAAMAAAABAAEAAAExAAIAAAAmAA .</p>
-        </blockquote>
-        <blockquote>
-            <p>{
-                "success": "Service has been added"
-                }</p>
-        </blockquote>
-        <p>Below are the fields required by the API</p>
-        <div class="table-responsive align-content-sm-center">
-            <table  class="table table-borderless m-b-none table-hover">
-                <thead>
-                <tr>
-                    <th width="20%">Field</th>
-                    <th width="10%">Type</th>
-                    <th width="20%">Required</th>
-                    <th width="50%">Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>service_name</td>
-                    <td>text</td>
-                    <td>Yes</td>
-                    <td>This is name of service</td>
-                </tr>
-                <tr>
-                    <td>description</td>
-                    <td>text</td>
-                    <td>Yes</td>
-                    <td>This is description of service</td>
-                </tr>
-                <tr>
-                    <td>image</td>
-                    <td>longText</td>
-                    <td>Yes</td>
-                    <td>A <strong>base64</strong> version of the picture/image/logo should be uploaded.</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-    
-        <h2 id="update-service">Update Service</h2>
-
-        <p>This section will take you through the steps for updating a service
-            on Patasente API. </p>
+        <p>This section will take you through the steps for deleting a product on Patasente API. </p>
         <p>A <strong>PUT</strong> request should be made to this API endpoint</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/update-service</p>
-        </blockquote>
-        <p>The parameters that should be sent to this endpoint are  "service_name" , "description" and "id", a json response with success code 200 will be returned</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/update-service/2?description=This is a test service post&service_name=Testing Api .</p>
-        </blockquote>
-        <blockquote>
-            <p>{
-                "success": "Service Updated"
-                }</p>
-        </blockquote>
-        <p>Below are the fields required by the API</p>
-        <div class="table-responsive align-content-sm-center">
-            <table  class="table table-borderless m-b-none table-hover">
-                <thead>
-                <tr>
-                    <th width="20%">Field</th>
-                    <th width="10%">Type</th>
-                    <th width="20%">Required</th>
-                    <th width="50%">Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>id</td>
-                    <td>number</td>
-                    <td>Yes</td>
-                    <td>This is id of service to update</td>
-                </tr>
-                <tr>
-                    <td>service_name</td>
-                    <td>text</td>
-                    <td>Yes</td>
-                    <td>This is name of service</td>
-                </tr>
-                <tr>
-                    <td>description</td>
-                    <td>text</td>
-                    <td>Yes</td>
-                    <td>This is description of service</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h2 id="delete-product-or-service">Delete Product or Service</h2>
-
-        <p>This section will take you through the steps for deleting a product or service
-            on Patasente API. </p>
-        <p>A <strong>PUT</strong> request should be made to this API endpoint</p>
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/delete-product-or-service</p>
+            <p>https://demo.patasente.com/phantom-api/delete-product</p>
         </blockquote>
         <p>The parameters that should be sent to this endpoint is "id", a json response with success code 200 will be returned</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/delete-product-or-service/2.</p>
+            <p>https://demo.patasente.com/phantom-api/delete-product/2.</p>
         </blockquote>
         <blockquote>
             <p>{
