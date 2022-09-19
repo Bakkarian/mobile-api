@@ -311,6 +311,9 @@
                                 <li id="add-delivery-item" class="level-3">
                                     <a id="add-delivery-link" href="#add-delivery" class="level-3">Add Delivery</a>
                                 </li>
+								<li id="update-delivery-item" class="level-3">
+                                    <a id="update-delivery-link" href="#update-delivery" class="level-3">Update Delivery</a>
+                                </li>
                                 <li id="list-deliveries-item" class="level-3">
                                     <a id="list-deductions-link" href="#list-deliveries" class="level-3">List all deliveries</a>
                                 </li>
@@ -4782,6 +4785,65 @@
                     "qualities":[{"level":"20","quality_measure_id":9}]}
                     </td>
                 </tr>
+                </tbody>
+            </table>
+        </div>
+
+		<h2 id="update-delivery">Update Delivery</h2>
+
+        <p>This section will take you through the steps for updating a supplier delviery on Patasente API. </p>
+        <p>A <strong>PUT</strong> request should be made to this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/update-delivery</p>
+        </blockquote>
+        <p>The parameters that should be sent to this endpoint , a json response with the list of unit measure will be returned</p>
+       
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/update-delivery</p>
+        </blockquote>
+        <blockquote>
+            <p>{
+                "success": "Delivery updated"
+                }</p>
+        </blockquote>
+
+        <blockquote>
+            <p>If there any errors, a json response with 400 error code will be returned</p>
+        </blockquote>
+        <blockquote>
+            <p>{
+                "error": "Delivery not updated "
+                }</p>
+        </blockquote>
+
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>supplier_id</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is id of the supplier from <a href="#get-suppliers-list">List of suppliers</a></td>
+                </tr>
+               
+                <tr>
+                    <td>products</td>
+                    <td>array</td>
+                    <td>Yes</td>
+                    <td>This is an array of product(s) that are being updated.Your products object array should contain the following variables 
+                    ,"products":[{"qty":"34","price":600,"id":3}]
+                    </td>
+                </tr>
+               
                 </tbody>
             </table>
         </div>
