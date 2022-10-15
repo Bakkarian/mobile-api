@@ -263,9 +263,12 @@
                             </ul>
                         </li>
                         <li id="mis-suppliers-item" class="level-2">
-                            <a id="mis-uppliers-link" href="#mis-suppliers" class="level-2">MIS Suppliers</a>
+                            <a id="mis-suppliers-link" href="#mis-suppliers" class="level-2">MIS Suppliers</a>
                             <ul class="level-3" id="company-list">
-                                <li id="company-list-item" class="level-3">
+                                <li id="mis-delivery-summary-item" class="level-3">
+                                    <a id="mis-delviery-summary-link" href="#mis-delviery-summary" class="level-3">MIS Delivery Summary</a>
+                                </li>
+								<li id="company-list-item" class="level-3">
                                     <a id="company-link" href="#get-company-list" class="level-3">List of Companies</a>
                                 </li>
                                 <li id="get-suppliers-list-item" class="level-3">
@@ -3304,10 +3307,34 @@
 
 
 
-        <h1 id="mis-suppliers">Management Information System Suppliers </h1>
+        <h1 id="mis-suppliers">Management Information System  </h1>
         <p>This is the section where a company manages its suppliers in the Managment Information System.</p>
 
-        <h2 id="get-company-list">List of Companies </h2>
+        <h2 id="mis-delivery-summary">MIS Delivery Summary </h2>
+
+        <p>This section will fetch the MIS delivery summary 
+            on Patasente API. </p>
+        <p>A <strong>GET</strong> request should be made to this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-deliveries-summary/</p>
+        </blockquote>
+        <p>No parameter should be sent to this endpoint </p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/deliveries/get-deliveries-summary.</p>
+        </blockquote>
+        <blockquote>
+			<p>
+			{
+			  "deliveries": "29",
+			  "advances": "10,200",
+			  "deductions": "5,200",
+			  "suppliers": "5",
+			  "total_outstanding_balance": "0",
+			  "products": 12
+			}</p>
+        </blockquote>
+
+		<h2 id="get-company-list">List of Companies </h2>
 
         <p>This section will take you through the steps for fetching a list of companies
             on Patasente API. Companies will be returned depending on the search query</p>
