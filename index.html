@@ -472,6 +472,9 @@
                                         <li id="get-purchase-orders-item" class="level-3">
                                             <a id="get-purchase-orders-link" href="#get-company-purchase-orders" class="level-3">Get Company Purchase Orders</a>
                                         </li>
+										<li id="get-purchase-orders-for-delivery-item" class="level-3">
+                                            <a id="get-purchase-orders-for-delivery-link" href="#get-purchase-orders-for-delivery" class="level-3">Get Purchase Orders for delivery</a>
+                                        </li>
                                         <li id="get-po-item" class="level-3">
                                             <a id="get-purchase-order-link" href="#get-purchase-order" class="level-3">Get Single Purchase Order</a>
                                         </li>
@@ -8326,6 +8329,116 @@
             you may skip and take a given number of results. This also helps in pagination. "<strong>search</strong>" , "<strong>from_date</strong>" , "<strong>to_date</strong>" .A json response with a list of purchase orders will be returned</p>
         <blockquote>
             <p>https://demo.patasente.com/phantom-api/get-all-my-purchase-order/order?skip=0&
+                take=10&search=patasente&from_date=2019-02-07&to_date=2019-06-05&</p>
+        </blockquote>
+
+        <blockquote>
+            <p>
+                [
+                    {
+                        "from_merchant_code": "M433240",
+                        "to_merchant_code": "M906857",
+                        "to_email": "chris@gmail.com",
+                        "to_phone": null,
+                        "logged_id": 2,
+                        "id": 2,
+                        "generated_instrument_no": "PO701693",
+                        "user_id": 2,
+                        "quotation_no": null,
+                        "from_company_id": 2,
+                        "to_company_id": 3,
+                        "from_name": "YYYY",
+                        "from_billing_address": "  ",
+                        "to_billing_address": "  ",
+                        "vat": "0",
+                        "validity_period": "10",
+                        "to_name": "Sheldon Brenda",
+                        "terms_and_conditions": "Najjanankumbi",
+                        "grand_total": "58,500",
+                        "type": "purchase-order",
+                        "delivery_method": "To be delivered",
+                        "delivery_status": "Pending",
+                        "status": 0,
+                        "currency_id": 2,
+                        "currency_format": "USD",
+                        "created_at": {
+                            "date": "2020-03-23 07:18:50.000000",
+                            "timezone_type": 3,
+                            "timezone": "UTC"
+                        },
+                        "updated_at": {
+                            "date": "2020-03-23 07:18:50.000000",
+                            "timezone_type": 3,
+                            "timezone": "UTC"
+                        },
+                        "receiver_finance_request_status": 0,
+                        "sender_finance_request_status": 0,
+                        "to_email_address": null
+                    },
+
+                /...../
+                ]
+            </p>
+        </blockquote>
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>skip</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is number of items that should be skipped but default is 0</td>
+                </tr>
+                <tr>
+                    <td>take</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is number of items that should be fetched per request but default is 10.</td>
+                </tr>
+                <tr>
+                    <td>search</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is search query.</td>
+                </tr>
+                <tr>
+                    <td>from_date</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>This is date from where you want to start the filtering of results.</td>
+                </tr>
+                <tr>
+                    <td>to_date</td>
+                    <td>date</td>
+                    <td>No</td>
+                    <td>This is date from where you want to end the filtering of results.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <h2 id="get-purchase-orders-for-delivery">List purchase orders for delivery</h2>
+        <p>This section will take you through the steps for fetching purchase orders for delivery on Patasente API. </p>
+
+        <p>A <strong>GET</strong> request should be made to this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/purchase-orders/get-purchase-orders-for-delivery/order?</p>
+        </blockquote>
+        <p>The parameters that should be sent to this endpoint are "<strong>skip</strong>" , "<strong>take</strong>" .To limit the number of results returned from the query, or to skip a given number of results in the query,
+            you may skip and take a given number of results. This also helps in pagination. "<strong>search</strong>" , "<strong>from_date</strong>" , "<strong>to_date</strong>" .A json response with a list of purchase orders will be returned</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/purchase-orders/get-purchase-orders-for-delivery/order?skip=0&
                 take=10&search=patasente&from_date=2019-02-07&to_date=2019-06-05&</p>
         </blockquote>
 
