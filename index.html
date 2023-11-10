@@ -1745,14 +1745,34 @@
         <h2 id="update-pin">Update Account PIN</h2>
         <p>This section will take you through the steps for updating an account PIN
             on Patasente API .</p>
-        <p>A <strong>PUT</strong> request should be made to  this API endpoint</p>
+        <p>A <strong>POST</strong> request should be made to this API endpoint to send a PIN update OTP Code</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/send-update-pin-otp-code</p>
+        </blockquote>
+        <p>NO parameters should be sent to this endpoint.</p>
+
+        <p>If the request was successful,  a response with success code 200 will be sent</p>
+        <blockquote>
+            <p>{
+                "success": "Enter the 4-digit code sent to your phone."
+                }</p>
+        </blockquote>
+        <p>If the request wasn't successful,  a response with success code 404 will be sent</p>
+        <blockquote>
+            <p>{
+                "error": "No PIN update OTP code sent."
+                }</p>
+        </blockquote>
+
+        <p>A <strong>PUT</strong> request should be made to this API endpoint</p>
+
         <blockquote>
             <p>https://demo.patasente.com/phantom-api/update-pin</p>
         </blockquote>
-        <p>The parameter that should be sent to this endpoint "new_pin" and "current_password".</p>
+        <p>The parameters that should be sent to this endpoint are "new_pin" ,"code" and "current_password".</p>
         <blockquote>
             <p>
-                https://demo.patasente.com/phantom-api/update-pin?current_password=myPassword&new_pin=1234
+                https://demo.patasente.com/phantom-api/update-pin?current_password=myPassword&new_pin=1234&code=1035
             </p>
         </blockquote>
 
@@ -1791,6 +1811,12 @@
                     <td>text</td>
                     <td>Yes</td>
                     <td>This is your current password for the account</td>
+                </tr>
+                <tr>
+                    <td>code</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is the 4 digit OTP code sent to user's phne</td>
                 </tr>
                 </tbody>
             </table>
