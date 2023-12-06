@@ -157,6 +157,9 @@
                                         <li id="update-pin-item" class="level-3">
                                             <a id="update-pin-link" href="#update-pin" class="level-3">Update Account Pin</a>
                                         </li>
+                                        <li id="delete-account-item" class="level-3">
+                                            <a id="delete-account-link" href="#delete-account" class="level-3">Delete Account</a>
+                                        </li>
                                     </ul>
                                 <li id="terms-and-conditions-item" class="level-2">
                                     <a id="terms-and-conditions-link" href="#terms-and-conditions" class="level-2">Terms & conditions</a>
@@ -411,6 +414,9 @@
                                 <li id="convert-currency-item" class="level-3">
                                     <a id="convert-currency-link" href="#convert-currency" class="level-3">Convert Currency</a>
                                 </li>
+                                <li id="payment-transaction-token-item" class="level-3">
+                                    <a id="payment-transaction-token-link" href="#payment-transaction-token" class="level-3">Payment transaction token</a>
+                                </li>
 
                                 <li id="wallet-payment-item" class="level-2">
                                     <a id="wallet-payments-link" href="#pay-someone" class="level-2">Pay Someone</a>
@@ -442,9 +448,6 @@
                                         </li>
                                         <li id="deposit-by-phone-item" class="level-3">
                                             <a id="deposit-by-phone-link" href="#deposit-by-phone" class="level-3">By Mobile Money</a>
-                                        </li>
-                                        <li id="deposit-by-bank-card-item" class="level-3">
-                                            <a id="deposit-by-bank-card-link" href="#deposit-by-bank-card" class="level-3">By Bank Card</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -1760,7 +1763,7 @@
                     <td>code</td>
                     <td>number</td>
                     <td>Yes</td>
-                    <td>This is the 4 digit OTP code sent to user's phne</td>
+                    <td>This is the 4 digit OTP code sent to user's phone</td>
                 </tr>
                 </tbody>
             </table>
@@ -1840,7 +1843,81 @@
                     <td>code</td>
                     <td>number</td>
                     <td>Yes</td>
-                    <td>This is the 4 digit OTP code sent to user's phne</td>
+                    <td>This is the 4 digit OTP code sent to user's phone</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="delete-account">Delete Account</h2>
+        <p>This section will take you through the steps for deleting an account PIN
+            on Patasente API .</p>
+        <p>A <strong>POST</strong> request should be made to this API endpoint to send an account delete OTP Code</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/send-account-deletion-code</p>
+        </blockquote>
+        <p>NO parameters should be sent to this endpoint.</p>
+
+        <p>If the request was successful, a response with success code 200 will be sent</p>
+        <blockquote>
+            <p>{
+                "success": "Enter the 4-digit code sent to your phone."
+                }</p>
+        </blockquote>
+        <p>If the request wasn't successful,  a response with success code 404 will be sent</p>
+        <blockquote>
+            <p>{
+                "error": "No account deletion OTP code sent."
+                }</p>
+        </blockquote>
+
+        <p>A <strong>POST</strong> request should be made to this API endpoint</p>
+
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/delete-account</p>
+        </blockquote>
+        <p>The parameters that should be sent to this endpoint are "reason" and ,"code".</p>
+        <blockquote>
+            <p>
+                https://demo.patasente.com/phantom-api/delete-account?reason=Njikoye&code=1035
+            </p>
+        </blockquote>
+
+        <p>If the request was successful,  a response with success code 200 will be sent</p>
+        <blockquote>
+            <p>{
+                "success": "Your account is now under deletion process, You can recover your account by logging in with 30 days from today"
+                }</p>
+        </blockquote>
+        <p>If the request wasn't successful,  a response with success code 404 will be sent</p>
+        <blockquote>
+            <p>{
+                "error": "Account deletion failed"
+                }</p>
+        </blockquote>
+        <p>Below are the fields required by the API</p>
+        <div class="table-responsive align-content-sm-center">
+            <table  class="table table-borderless m-b-none table-hover">
+                <thead>
+                <tr>
+                    <th width="20%">Field</th>
+                    <th width="10%">Type</th>
+                    <th width="20%">Required</th>
+                    <th width="50%">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>reason</td>
+                    <td>text</td>
+                    <td>No</td>
+                    <td>This is a reason why account is being deleted but its optional</td>
+                </tr>
+                <tr>
+                    <td>code</td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>This is the 4 digit OTP code sent to user's phone</td>
                 </tr>
                 </tbody>
             </table>
@@ -7235,6 +7312,30 @@
             </table>
         </div>
 
+        <h2 id="payment-transaction-token"> Payment Transaction Token</h2>
+
+        <p>This section will take you through the steps for sending a payment transaction token to user's device
+            on Patasente API. </p>
+
+        <p>A payment transaction OTP token is required for any transaction that is above 100,000/=. </p>
+
+        <p>A <strong>POST</strong> request should be made to this API endpoint</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/send-payment-transaction-token</p>
+        </blockquote>
+        <p>No parameter should be sent to this endpoint. A json response will be returned</p>
+        <blockquote>
+            <p>https://demo.patasente.com/phantom-api/send-payment-transaction-token</p>
+        </blockquote>
+
+        <blockquote>
+            <p>{
+                "message" => A four (6) digit code has been sent to your device
+                }
+            </p>
+
+        </blockquote>
+
         <h1 id="pay-someone">Pay Someone</h1>
         <p>This is the section where a company makes it's payments e.g to a company's wallet ,to a bank account , to mobile money or buy airtime .</p>
 
@@ -7338,16 +7439,16 @@
 
         <p>A <strong>POST</strong> request should be made to this API endpoint</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/wallet/save-business-transaction</p>
+            <p>https://demo.patasente.com/phantom-api/wallet/save-transaction</p>
         </blockquote>
         <p>The parameter that should be sent to this endpoint is the "type" , "transaction_type" , "charge_bearer" ,
-            "reason" , " bank_method"  , " account_number"  , " account_name" , " bank", " branch" , " charge" ,
+            "reason" , " bank_method"  , " account_number"  , " account_name" , " bank", " branch" , " charge" ,"code"
             "currency" , "total" and "amount". </p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/wallet/save-business-transaction?
+            <p>https://demo.patasente.com/phantom-api/wallet/save-transaction?
                 type=bank&transaction_type=bank payment&amount=50000&charge_bearer=payer&bank_method=1
                 &account_number=65435623&account_name=Senior Developer&bank=Patasente Bank&branch=Kampala Road&charge=3000
-                &currency=1&reason=Miss Curvy&total=53000</p>
+                &currency=1&reason=Miss Curvy&total=53000&code=532070</p>
         </blockquote>
         <p>A json response with 200 success code  will be returned</p>
         <blockquote>
@@ -7455,6 +7556,12 @@
                     <td>Yes</td>
                     <td>This is the branch of the bank account  </td>
                 </tr>
+                <tr>
+                    <td>code</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is required for any transaction more than 100,000/=  </td>
+                </tr>
 
                 </tbody>
             </table>
@@ -7469,11 +7576,11 @@
             <p>https://demo.patasente.com/phantom-api/wallet/pay-someone-mobile-money-transaction</p>
         </blockquote>
         <p>The parameter that should be sent to this endpoint is the "type" , "transaction_type",
-            "reason" ,  " first_name"  , "charge_bearer"  , "last_name" , "phone"   and "amount". </p>
+            "reason" ,  " first_name"  , "charge_bearer"  , "last_name" , "phone" , "code" and "amount". </p>
         <blockquote>
             <p>https://demo.patasente.com/phantom-api/wallet/pay-someone-mobile-money-transaction?
                 type=mobile&transaction_type=mobile payment&amount=4000&first_name=Senior
-                &last_name=Developer&phone=256770000077&charge_bearer=payer&reason=Testing mobile money</p>
+                &last_name=Developer&phone=256770000077&charge_bearer=payer&reason=Testing mobile money&code=394943</p>
         </blockquote>
         <p>A json response with 200 success code  will be returned</p>
         <blockquote>
@@ -7551,6 +7658,12 @@
                     <td>Yes</td>
                     <td>This is the registered last or other name(s) of the phone number by the Telecom company </td>
                 </tr>
+                <tr>
+                    <td>code</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is required for any transaction more than 100,000/=  </td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -7565,11 +7678,11 @@
             <p>https://demo.patasente.com/phantom-api/wallet/save-business-transaction</p>
         </blockquote>
         <p>The parameter that should be sent to this endpoint is the "type" , "transaction_type",
-            "reason" ,  " first_name"  , "last_name" , "phone"   and "amount". </p>
+            "reason" ,  " first_name"  , "last_name" , "phone" ,"code"  and "amount". </p>
         <blockquote>
             <p>https://demo.patasente.com/phantom-api/wallet/save-business-transaction?
                 type=mobile&transaction_type=airtime purchase&amount=4000&first_name=Senior
-                &last_name=Developer&phone=256770000077</p>
+                &last_name=Developer&phone=256770000077&code=203943</p>
         </blockquote>
         <p>A json response with 200 success code  will be returned</p>
         <blockquote>
@@ -7633,6 +7746,12 @@
                     <td>text</td>
                     <td>Yes</td>
                     <td>This is the registered last or other name(s) of the phone number by the Telecom company </td>
+                </tr>
+                <tr>
+                    <td>code</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is required for any transaction more than 100,000/=  </td>
                 </tr>
                 </tbody>
             </table>
@@ -7796,6 +7915,12 @@
                     <td>Yes</td>
                     <td>This is the id of the biller from <a href="#get-billers">List of Billers</a> </td>
                 </tr>
+                <tr>
+                    <td>code</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is required for any transaction more than 100,000/=  </td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -7811,10 +7936,11 @@
         </blockquote>
 
         <p>The parameter that should be sent to this endpoint is the "type" , "transaction_type" , "company_id" ,
-             "reason" , "charge_bearer", "charge", " bank_method" , "financial_instrument_id" and "amount". </p>
+             "reason" , "charge_bearer", "charge", " bank_method" , "financial_instrument_id" ,"code" and "amount". </p>
         <blockquote>
             <p>https://demo.patasente.com/phantom-api/wallet/save-invoice-wallet-transaction
-                ?type=wallet&transaction_type=wallet payment&charge=500& amount=40000& charge_bearer=payer&company_id=5 &financial_instrument_id=4567&reason=invoice payment&bank_method=5</p>
+                ?type=wallet&transaction_type=wallet payment&charge=500& amount=40000& charge_bearer=payer&company_id=5
+                &financial_instrument_id=4567&reason=invoice payment&bank_method=5&code=429482</p>
         </blockquote>
         <p>A json response with 200 success code  will be returned</p>
         <blockquote>
@@ -7902,7 +8028,12 @@
                     <td>Yes</td>
                     <td>This is the type of the payment. For this case it must be "<strong>wallet</strong>" </td>
                 </tr>
-
+                <tr>
+                    <td>code</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is required for any transaction more than 100,000/=  </td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -8039,13 +8170,13 @@
         </div>
 
         <h2 id="deposit-by-phone">By Mobile Money</h2>
-        <p>This section will take you through the steps for making a mobile money desposit
+        <p>This section will take you through the steps for making a mobile money deposit
             on Patasente API. </p>
         <p>if a user selects a phone network with <strong>mobile_money_company_id</strong> 1 / MTN Uganda  or  <strong>mobile_money_company_id</strong> 2 / Airtel Uganda, instructions on how to receive a secret code ( transaction code as referred to by MTN Uganda deposits on Patasente ) should display.
         </p>
         <p>For Airtel Uganda a user has to initiate a cash withdraw and then enter the secret code and amount in the fields above.
         </p>
-        <p>For MTN Uganda a user has to request a transaction code through Patasente App and then enter it.</p>
+        <p>A user has to request a transaction code through Patasente App and then enter it.</p>
         <p>A <strong>POST</strong> request should be made to this API endpoint</p>
         <blockquote>
             <p>https://demo.patasente.com/phantom-api/send-transaction-token/</p>
@@ -8073,12 +8204,13 @@
 
         <p>A <strong>POST</strong> request should be made to this API endpoint</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/wallet/save-business-transaction</p>
+            <p>https://demo.patasente.com/phantom-api/wallet/save-mobile-deposit-transaction</p>
         </blockquote>
         <p>The parameters that should be sent to this endpoint is the "type" , "transaction_type",
-             "phone",  ,"secret_code" ,"mobile_money_company_id"  and "amount". </p>
+             "phone", "transaction_code" ,"secret_code" ,"mobile_money_company_id"  and "amount". </p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/wallet/save-mobile-deposit-transaction?transaction_type=mobiledeposit&type=mobile&amount=2000&phone=2567828000000&secret_code=123456&mobile_money_company_id=2</p>
+            <p>https://demo.patasente.com/phantom-api/wallet/save-mobile-deposit-transaction?transaction_type=mobiledeposit&
+                type=mobile&amount=2000&phone=2567828000000&secret_code=123456&transaction_code=123456&mobile_money_company_id=2</p>
         </blockquote>
         <p>A json response with 200 success code  will be returned</p>
         <blockquote>
@@ -8132,17 +8264,17 @@
                     <td>Yes</td>
                     <td>This is the amount that should be deposited </td>
                 </tr>
-                <!--<tr>
-                    <td>phone_id</td>
+                <tr>
+                    <td>transaction_code</td>
                     <td>number</td>
                     <td>Yes</td>
-                    <td>This is the <strong>id</strong> of the phone from <a href="#list-mobile-money">List of Mobile Money Numbers </a>.
-                </tr>-->
+                    <td>This is a a 6 (six) digit transaction code issued by Patasente on all deposits</td>.
+                </tr>
                 <tr>
                     <td>secret_code</td>
                     <td>number</td>
-                    <td>Yes</td>
-                    <td>This is a 6 (six) digit secret code issued by <strong>Airtel Uganda</strong> during Cash Withdraw that should be deposited. Its also a 6 (six) digit transaction code issued by Patasente on MTN deposits </td>
+                    <td>No</td>
+                    <td>This is a 6 (six) digit secret code issued by <strong>Airtel Uganda</strong> during Cash Withdraw that should be deposited. </td>
                 </tr>
                 <tr>
                     <td>mobile_money_company_id</td>
@@ -8154,39 +8286,6 @@
             </table>
         </div>
 
-        <h2 id="deposit-by-bank-card">Deposit By Bank Card</h2>
-        <p>This section will take you through the steps for depositing funds to your wallet using a bank card like visa or mastercard on Patasente API. </p>
-
-        <h2><strong>Interswitch SDK configurations </strong></h2>
-        <p>To fetch the configuration required in interswitch sdk, a A <strong>POST</strong> request should be made to this API endpoint. </p>
-
-        <blockquote>
-            <p>https://demo.patasente.com/phantom-api/get-interswitch-card-deposit-credentials</p>
-        </blockquote>
-        <p>A json response with 200 success code  will be returned</p>
-        <blockquote>
-            <p>{
-                    "channel": "MOBILE",
-                    "currencyCode": "UGX",
-                    "customerInfor": "1002|kelvin|mwangi|kelvin.mwangi@interswitchgroup.com|0714171282|NBI|KE|00200|wstlnds|NBI",
-                    "dateOfPayment": "2020-08-11T13:55:08.333939Z",
-                    "domain": "ISWUG",
-                    "fee": "0",
-                    "iconUrl": "https://photos.lci.fr/images/613/344/oeuf-instagram-record-31922d-0@1x.jpeg",
-                    "merchantCode": "PATAUG0001",
-                    "merchantName": "Patasente",
-                    "narration": "Payment",
-                    "orderId": "PATM00000114562",
-                    "preauth": "0",
-                    "terminalId": "3TLP0001",
-                    "transactionReference": "PATM00000114562",
-                    "cardTokens": [], // card tokens will be returned if a user has already added the card on Patasente
-                    "amount": 36000, // this is the amount in minor denominations i.e 3600 * 100
-                    "deposit_amount": 3600
-                }
-            </p>
-        </blockquote>
-
         <h1 id="wallet-withdraw">Wallet Withdraw</h1>
         <p>This is the section where a company makes it's withdraws from their wallet.</p>
 
@@ -8197,14 +8296,14 @@
 
         <p>A <strong>POST</strong> request should be made to this API endpoint</p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/wallet/save-business-transaction</p>
+            <p>https://demo.patasente.com/phantom-api/wallet/save-transaction</p>
         </blockquote>
         <p>The parameter that should be sent to this endpoint is the "type" , "transaction_type"  ,
-             "bank_method" "bank_id" ,  "charge" ,"currency" , "total" and "amount". </p>
+             "bank_method" "bank_id" ,  "charge" ,"currency" ,"code" , "total" and "amount". </p>
         <blockquote>
-            <p>https://demo.patasente.com/phantom-api/wallet/save-business-transaction?
+            <p>https://demo.patasente.com/phantom-api/wallet/save-transaction?
                 type=bank&transaction_type=bank withdraw&amount=50000&bank_method=1&bank_id=5
-                &charge=3000&currency=1&total=53000</p>
+                &charge=3000&currency=1&total=53000&code=053010</p>
         </blockquote>
         <p>A json response with 200 success code  will be returned</p>
         <blockquote>
@@ -8282,7 +8381,12 @@
                     <td>Yes</td>
                     <td>This is the <strong>id</strong> of the bank from <a href="#list-banks">List of Banks </a>.
                 </tr>
-
+                <tr>
+                    <td>code</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is required for any transaction more than 100,000/=  </td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -8296,11 +8400,11 @@
             <p>https://demo.patasente.com/phantom-api/wallet/withdraw-mobile-money-transaction</p>
         </blockquote>
         <p>The parameter that should be sent to this endpoint is the "type" , "transaction_type",
-            "phone_id"   and "amount". </p>
+            "phone_id" ,"code" and "amount". </p>
 
         <blockquote>
             <p>https://demo.patasente.com/phantom-api/wallet/withdraw-mobile-money-transaction?
-                type=mobile&transaction_type=mobile withdraw&amount=4000&phone_id=2
+                type=mobile&transaction_type=mobile withdraw&amount=4000&phone_id=2&phone_id=233002
             </p>
         </blockquote>
         <p>A json response with 200 success code  will be returned</p>
@@ -8355,7 +8459,12 @@
                     <td>Yes</td>
                     <td>This is the <strong>id</strong> of the mobile money phone number from <a href="#list-mobile-money">List Mobile Money Numbers  </a>.
                 </tr>
-
+                <tr>
+                    <td>code</td>
+                    <td>number</td>
+                    <td>No</td>
+                    <td>This is required for any transaction more than 100,000/=  </td>
+                </tr>
                 </tbody>
             </table>
         </div>
